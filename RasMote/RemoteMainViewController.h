@@ -9,5 +9,9 @@
 #import "RemoteFlipsideViewController.h"
 
 @interface RemoteMainViewController : UIViewController <RemoteFlipsideViewControllerDelegate>
+@property(nonatomic) RemoteFlipsideViewController *flipController;
+
+-(IBAction)buttonTapped:(UIButton *)sender;
+
 
 @end

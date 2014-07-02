@@ -12,12 +12,16 @@
 
 @protocol RemoteFlipsideViewControllerDelegate
 - (void)flipsideViewControllerDidFinish:(RemoteFlipsideViewController *)controller;
+
 @end
 
 @interface RemoteFlipsideViewController : UIViewController
 
 @property (weak, nonatomic) id <RemoteFlipsideViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property(nonatomic) NSString *address;
 
 - (IBAction)done:(id)sender;
+- (NSString*) address;
 
 @end
