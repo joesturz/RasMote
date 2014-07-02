@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D84EC32F196393FF00FC36DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC32E196393FF00FC36DF /* Foundation.framework */; };
+		D84EC331196393FF00FC36DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC330196393FF00FC36DF /* CoreGraphics.framework */; };
+		D84EC333196393FF00FC36DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC332196393FF00FC36DF /* UIKit.framework */; };
+		D84EC339196393FF00FC36DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84EC337196393FF00FC36DF /* InfoPlist.strings */; };
+		D84EC33B196393FF00FC36DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC33A196393FF00FC36DF /* main.m */; };
+		D84EC33F196393FF00FC36DF /* RemoteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */; };
+		D84EC342196393FF00FC36DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84EC340196393FF00FC36DF /* Main.storyboard */; };
+		D84EC345196393FF00FC36DF /* RemoteMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC344196393FF00FC36DF /* RemoteMainViewController.m */; };
+		D84EC348196393FF00FC36DF /* RemoteFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */; };
+		D84EC34A196393FF00FC36DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84EC349196393FF00FC36DF /* Images.xcassets */; };
+		D84EC351196393FF00FC36DF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC350196393FF00FC36DF /* XCTest.framework */; };
+		D84EC352196393FF00FC36DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC32E196393FF00FC36DF /* Foundation.framework */; };
+		D84EC353196393FF00FC36DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC332196393FF00FC36DF /* UIKit.framework */; };
+		D84EC35B196393FF00FC36DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84EC359196393FF00FC36DF /* InfoPlist.strings */; };
+		D84EC35D196393FF00FC36DF /* RasMoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC35C196393FF00FC36DF /* RasMoteTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D84EC354196393FF00FC36DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D84EC323196393FF00FC36DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D84EC32A196393FF00FC36DF;
+			remoteInfo = RasMote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D84EC32B196393FF00FC36DF /* RasMote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RasMote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84EC32E196393FF00FC36DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D84EC330196393FF00FC36DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D84EC332196393FF00FC36DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D84EC336196393FF00FC36DF /* RasMote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RasMote-Info.plist"; sourceTree = "<group>"; };
+		D84EC338196393FF00FC36DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D84EC33A196393FF00FC36DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D84EC33C196393FF00FC36DF /* RasMote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RasMote-Prefix.pch"; sourceTree = "<group>"; };
+		D84EC33D196393FF00FC36DF /* RemoteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteAppDelegate.h; sourceTree = "<group>"; };
+		D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteAppDelegate.m; sourceTree = "<group>"; };
+		D84EC341196393FF00FC36DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D84EC343196393FF00FC36DF /* RemoteMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteMainViewController.h; sourceTree = "<group>"; };
+		D84EC344196393FF00FC36DF /* RemoteMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteMainViewController.m; sourceTree = "<group>"; };
+		D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteFlipsideViewController.h; sourceTree = "<group>"; };
+		D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteFlipsideViewController.m; sourceTree = "<group>"; };
+		D84EC349196393FF00FC36DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D84EC34F196393FF00FC36DF /* RasMoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasMoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84EC350196393FF00FC36DF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D84EC358196393FF00FC36DF /* RasMoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RasMoteTests-Info.plist"; sourceTree = "<group>"; };
+		D84EC35A196393FF00FC36DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D84EC35C196393FF00FC36DF /* RasMoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RasMoteTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D84EC328196393FF00FC36DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D84EC331196393FF00FC36DF /* CoreGraphics.framework in Frameworks */,
+				D84EC333196393FF00FC36DF /* UIKit.framework in Frameworks */,
+				D84EC32F196393FF00FC36DF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D84EC34C196393FF00FC36DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D84EC351196393FF00FC36DF /* XCTest.framework in Frameworks */,
+				D84EC353196393FF00FC36DF /* UIKit.framework in Frameworks */,
+				D84EC352196393FF00FC36DF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D84EC322196393FF00FC36DF = {
+			isa = PBXGroup;
+			children = (
+				D84EC334196393FF00FC36DF /* RasMote */,
+				D84EC356196393FF00FC36DF /* RasMoteTests */,
+				D84EC32D196393FF00FC36DF /* Frameworks */,
+				D84EC32C196393FF00FC36DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D84EC32C196393FF00FC36DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC32B196393FF00FC36DF /* RasMote.app */,
+				D84EC34F196393FF00FC36DF /* RasMoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D84EC32D196393FF00FC36DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC32E196393FF00FC36DF /* Foundation.framework */,
+				D84EC330196393FF00FC36DF /* CoreGraphics.framework */,
+				D84EC332196393FF00FC36DF /* UIKit.framework */,
+				D84EC350196393FF00FC36DF /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D84EC334196393FF00FC36DF /* RasMote */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC33D196393FF00FC36DF /* RemoteAppDelegate.h */,
+				D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */,
+				D84EC340196393FF00FC36DF /* Main.storyboard */,
+				D84EC343196393FF00FC36DF /* RemoteMainViewController.h */,
+				D84EC344196393FF00FC36DF /* RemoteMainViewController.m */,
+				D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */,
+				D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */,
+				D84EC349196393FF00FC36DF /* Images.xcassets */,
+				D84EC335196393FF00FC36DF /* Supporting Files */,
+			);
+			path = RasMote;
+			sourceTree = "<group>";
+		};
+		D84EC335196393FF00FC36DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC336196393FF00FC36DF /* RasMote-Info.plist */,
+				D84EC337196393FF00FC36DF /* InfoPlist.strings */,
+				D84EC33A196393FF00FC36DF /* main.m */,
+				D84EC33C196393FF00FC36DF /* RasMote-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D84EC356196393FF00FC36DF /* RasMoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC35C196393FF00FC36DF /* RasMoteTests.m */,
+				D84EC357196393FF00FC36DF /* Supporting Files */,
+			);
+			path = RasMoteTests;
+			sourceTree = "<group>";
+		};
+		D84EC357196393FF00FC36DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC358196393FF00FC36DF /* RasMoteTests-Info.plist */,
+				D84EC359196393FF00FC36DF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D84EC32A196393FF00FC36DF /* RasMote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D84EC360196393FF00FC36DF /* Build configuration list for PBXNativeTarget "RasMote" */;
+			buildPhases = (
+				D84EC327196393FF00FC36DF /* Sources */,
+				D84EC328196393FF00FC36DF /* Frameworks */,
+				D84EC329196393FF00FC36DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RasMote;
+			productName = RasMote;
+			productReference = D84EC32B196393FF00FC36DF /* RasMote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D84EC34E196393FF00FC36DF /* RasMoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D84EC363196393FF00FC36DF /* Build configuration list for PBXNativeTarget "RasMoteTests" */;
+			buildPhases = (
+				D84EC34B196393FF00FC36DF /* Sources */,
+				D84EC34C196393FF00FC36DF /* Frameworks */,
+				D84EC34D196393FF00FC36DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D84EC355196393FF00FC36DF /* PBXTargetDependency */,
+			);
+			name = RasMoteTests;
+			productName = RasMoteTests;
+			productReference = D84EC34F196393FF00FC36DF /* RasMoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D84EC323196393FF00FC36DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = Remote;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Joe Sturzenegger";
+				TargetAttributes = {
+					D84EC34E196393FF00FC36DF = {
+						TestTargetID = D84EC32A196393FF00FC36DF;
+					};
+				};
+			};
+			buildConfigurationList = D84EC326196393FF00FC36DF /* Build configuration list for PBXProject "RasMote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D84EC322196393FF00FC36DF;
+			productRefGroup = D84EC32C196393FF00FC36DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D84EC32A196393FF00FC36DF /* RasMote */,
+				D84EC34E196393FF00FC36DF /* RasMoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D84EC329196393FF00FC36DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D84EC34A196393FF00FC36DF /* Images.xcassets in Resources */,
+				D84EC339196393FF00FC36DF /* InfoPlist.strings in Resources */,
+				D84EC342196393FF00FC36DF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D84EC34D196393FF00FC36DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D84EC35B196393FF00FC36DF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D84EC327196393FF00FC36DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D84EC348196393FF00FC36DF /* RemoteFlipsideViewController.m in Sources */,
+				D84EC33F196393FF00FC36DF /* RemoteAppDelegate.m in Sources */,
+				D84EC33B196393FF00FC36DF /* main.m in Sources */,
+				D84EC345196393FF00FC36DF /* RemoteMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D84EC34B196393FF00FC36DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D84EC35D196393FF00FC36DF /* RasMoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D84EC355196393FF00FC36DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D84EC32A196393FF00FC36DF /* RasMote */;
+			targetProxy = D84EC354196393FF00FC36DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D84EC337196393FF00FC36DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D84EC338196393FF00FC36DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D84EC340196393FF00FC36DF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D84EC341196393FF00FC36DF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D84EC359196393FF00FC36DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D84EC35A196393FF00FC36DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D84EC35E196393FF00FC36DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D84EC35F196393FF00FC36DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D84EC361196393FF00FC36DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
+				INFOPLIST_FILE = "RasMote/RasMote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D84EC362196393FF00FC36DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
+				INFOPLIST_FILE = "RasMote/RasMote-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D84EC364196393FF00FC36DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RasMote.app/RasMote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RasMoteTests/RasMoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D84EC365196393FF00FC36DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RasMote.app/RasMote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
+				INFOPLIST_FILE = "RasMoteTests/RasMoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D84EC326196393FF00FC36DF /* Build configuration list for PBXProject "RasMote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D84EC35E196393FF00FC36DF /* Debug */,
+				D84EC35F196393FF00FC36DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D84EC360196393FF00FC36DF /* Build configuration list for PBXNativeTarget "RasMote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D84EC361196393FF00FC36DF /* Debug */,
+				D84EC362196393FF00FC36DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D84EC363196393FF00FC36DF /* Build configuration list for PBXNativeTarget "RasMoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D84EC364196393FF00FC36DF /* Debug */,
+				D84EC365196393FF00FC36DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D84EC323196393FF00FC36DF /* Project object */;
+}
