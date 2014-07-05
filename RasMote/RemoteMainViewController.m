@@ -25,33 +25,42 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)sendClientURL:(NSString*) cURL fromServerURL:(NSString*) sURL overPort:(NSString*) portNumber
+{
+    
+}
+
 -(IBAction)buttonTapped:(UIButton *)sender
 {
     UIButton *myButton = sender;
-    NSLog([_flipController address]);
-    NSString *currentAddress = [_flipController address];
+    NSLog(@"Server IP: %@",[_flipController serverAddress]);
+    NSLog(@"Client IP: %@",[_flipController clientAddress]);
+    NSLog(@"Port: %@",[_flipController port]);
     
-    if ([myButton.currentTitle  isEqualToString: @"Up"])
+    
+    //NSString *currentAddress = [_flipController address];
+    
+    if ([myButton.currentTitle  isEqualToString: @"↑"])
     {
         NSLog(@"Up button tapped!");
     }
-    else if ([myButton.currentTitle isEqualToString:@"Down"])
+    else if ([myButton.currentTitle isEqualToString:@"↓"])
     {
         NSLog(@"Down button tapped!");
     }
-    else if ([myButton.currentTitle isEqualToString:@"Left"])
+    else if ([myButton.currentTitle isEqualToString:@"←"])
     {
         NSLog(@"Left button tapped!");
     }
-    else if ([myButton.currentTitle isEqualToString:@"Right"])
+    else if ([myButton.currentTitle isEqualToString:@"→"])
     {
         NSLog(@"Right button tapped!");
     }
-    else if ([myButton.currentTitle isEqualToString:@"Select"])
+    else if ([myButton.currentTitle isEqualToString:@"◉"])
     {
         NSLog(@"Select button tapped!");
     }
-    else if ([myButton.currentTitle isEqualToString:@"Menu"])
+    else if ([myButton.currentTitle isEqualToString:@"↩︎"])
     {
         NSLog(@"Menu button tapped!");
     }
@@ -70,8 +79,8 @@
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         
         RemoteFlipsideViewController *flipC = (RemoteFlipsideViewController *)[segue destinationViewController];
-        NSString *test = [_flipController address];
-        [flipC setAddress:test];
+        NSString *test = [_flipController serverAddress];
+        [flipC setClientAddress:test];
         
         [[segue destinationViewController] setDelegate:self];
     }

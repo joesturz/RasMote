@@ -13,6 +13,11 @@
 @end
 
 @implementation RemoteFlipsideViewController
+{
+    NSString *clientAddress;
+    NSString *port;
+    NSString *serverAddress;
+}
 
 //NSMutableURLRequest *request;
 
@@ -20,35 +25,98 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.clientAddressField.delegate = self;
+    self.serverAddressField.delegate = self;
+    self.portField.delegate = self;
 }
-NSString *address;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(IBAction)applyClicked:(UIButton *)sender
+-(void)setClientAddress:(NSString *)add
 {
-    NSString *log = [NSString stringWithFormat:@"Got Address: %@", [_addressField text]];
-    if ([log isEqual:nil] || [log length] != 0)
-    {
-        [self setAddress:[_addressField text]];
-        NSLog(log);
-    }
-    //request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@""]];
+    clientAddress = add;
+    [_clientAddressField setText:add];
 }
--(void)setAddress:(NSString *)add
+-(void)setPort:(NSString *)add
 {
-    address = add;
-    [_addressField setText:add];
+    port = add;
+    [_portField setText:add];
 }
--(NSString*)address
+
+-(NSString*)clientAddress
 {
-    if ([address isEqual:nil] || [address length] == 0)
+    if ([clientAddress isEqual:nil] || [clientAddress length] == 0)
     {
-        return @"Unset Address";
+        return @"Unset Client Address";
     }
-    return address;
+    return clientAddress;
+}
+-(NSString*)port
+{
+    if ([port isEqual:nil] || [port length] == 0)
+    {
+        return @"Unset Port";
+    }
+    return port;
+}
+-(void)setServerAddress:(NSString*) add
+{
+    serverAddress = add;
+    [_serverAddressField setText:add];
+
+}
+-(NSString*)serverAddress
+{
+    if ([serverAddress isEqual:nil] || [serverAddress length] == 0)
+    {
+        return @"Unset Server Address";
+    }
+    return serverAddress;
+
+}
+
+//-(id)initWithPreferedSettings
+//{
+//    self = [super init];
+//    if (self)
+//    {
+//        [self prefersStatusBarHidden];
+//    }
+//    return self;
+//}
+//-(id)init
+//{
+//    return [self initWithPreferedSettings];
+//}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    NSString *addressString = [_clientAddressField text];
+    NSString *serverString = [_serverAddressField text];
+    NSString *portString =[_portField text];
+    
+    if (([addressString isEqual:nil] || [addressString length] != 0)
+        && ([portString isEqual:nil] || [portString length] != 0)
+        && ([serverString isEqual:nil] || [serverString length] != 0))
+    {
+        [self setClientAddress:addressString];
+        [self setPort:portString];
+        [self setServerAddress:serverString];
+        NSLog(@"Got Server Address: %@, Client Address: %@ and Port: %@", serverString, addressString, portString);
+    }
+    else
+    {
+        NSLog(@"Client, Server or Port were not set!");
+    }
+    return YES;
 }
 
 #pragma mark - Actions

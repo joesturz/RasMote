@@ -15,13 +15,19 @@
 
 @end
 
-@interface RemoteFlipsideViewController : UIViewController
+@interface RemoteFlipsideViewController : UIViewController <UITextFieldDelegate>
+{
+}
 
 @property (weak, nonatomic) id <RemoteFlipsideViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UITextField *addressField;
-@property(nonatomic) NSString *address;
+@property (weak, nonatomic) IBOutlet UITextField *clientAddressField;
+@property (weak, nonatomic) IBOutlet UITextField *serverAddressField;
+@property (weak, nonatomic) IBOutlet UITextField *portField;
+
+@property(nonatomic) NSString *clientAddress;
+@property(nonatomic) NSString *serverAddress;
+@property(nonatomic) NSString *port;
 
 - (IBAction)done:(id)sender;
-- (NSString*) address;
 
 @end
