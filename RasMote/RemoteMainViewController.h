@@ -11,8 +11,11 @@
 @interface RemoteMainViewController : UIViewController <RemoteFlipsideViewControllerDelegate>
 
 @property(strong, nonatomic) RemoteFlipsideViewController *flipController;
+@property(weak, nonatomic) IBOutlet UILabel *volumeLevel;
+@property(weak, nonatomic) RemoteMainViewController *delegate;
 
--(IBAction)buttonTapped:(UIButton *)sender;
+-(IBAction)buttonTapped:(id)sender;
+-(IBAction)stepperValueChanged:(id)sender;
 
 
 @end

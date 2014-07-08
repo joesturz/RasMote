@@ -28,6 +28,9 @@
 @property(nonatomic) NSString *serverAddress;
 @property(nonatomic) NSString *port;
 
+@property(nonatomic) NSUserDefaults *defaultSettings;
+
+-(void) setUpFlipSideServer:(NSString *) serverAdd Client:(NSString *)clientAdd Port:(NSString *) portNum;
 - (IBAction)done:(id)sender;
 
 @end

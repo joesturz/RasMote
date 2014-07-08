@@ -24,10 +24,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     self.clientAddressField.delegate = self;
     self.serverAddressField.delegate = self;
     self.portField.delegate = self;
+// Do any additional setup after loading the view, typically from a nib.
+    _defaultSettings = [NSUserDefaults standardUserDefaults];
+    [self setClientAddress:[_defaultSettings stringForKey:@"ClientAddress"]];
+    [self setServerAddress:[_defaultSettings stringForKey:@"ServerAddress"]];
+    [self setPort:[_defaultSettings stringForKey:@"PortNumber"]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,11 +44,13 @@
 {
     clientAddress = add;
     [_clientAddressField setText:add];
+    [_defaultSettings setObject:add forKey:@"ClientAddress"];
 }
 -(void)setPort:(NSString *)add
 {
     port = add;
     [_portField setText:add];
+    [_defaultSettings setObject:add forKey:@"PortNumber"];
 }
 
 -(NSString*)clientAddress
@@ -66,6 +73,7 @@
 {
     serverAddress = add;
     [_serverAddressField setText:add];
+    [_defaultSettings setObject:add forKey:@"ServerAddress"];
 
 }
 -(NSString*)serverAddress
@@ -77,7 +85,12 @@
     return serverAddress;
 
 }
-
+-(void) setUpFlipSideServer:(NSString *) serverAdd Client:(NSString *)clientAdd Port:(NSString *) portNum
+{
+    self.portField.text = portNum;
+    self.clientAddressField.text = clientAdd;
+    self.serverAddressField.text = serverAdd;
+}
 //-(id)initWithPreferedSettings
 //{
 //    self = [super init];
@@ -115,6 +128,9 @@
     else
     {
         NSLog(@"Client, Server or Port were not set!");
+        [self setClientAddress:addressString];
+        [self setPort:portString];
+        [self setServerAddress:serverString];
     }
     return YES;
 }
