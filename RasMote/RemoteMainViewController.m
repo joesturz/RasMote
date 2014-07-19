@@ -18,6 +18,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _defaultSettings = [NSUserDefaults standardUserDefaults];
+    if (_flipController == nil)
+    {
+        _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
+        _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
+        _portNum = [_defaultSettings stringForKey:@"PortNumber"];
+    }
+    else
+    {
+        _serverIP = [_flipController serverAddress];
+        _clientIP = [_flipController clientAddress];
+        _portNum = [_flipController port];
+    }
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.flipController = [[RemoteFlipsideViewController alloc] initWithNibName:@"RemoteFlipSideViewController" bundle:Nil];
 //    self.flipController.delegate = self;
@@ -37,15 +50,14 @@ bool isPlaying = NO;
     UIButton *myButton = (UIButton *)sender;
     
     NSMutableURLRequest *request;
-
     NSError *requestError;
     NSURLResponse *response = nil;
     NSString *URLString;
-    NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/", [_flipController serverAddress], [_flipController port],[_flipController clientAddress]];
+    NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/", _serverIP, _portNum, _clientIP];
 
-    NSLog(@"Server IP: %@",[_flipController serverAddress]);
-    NSLog(@"Client IP: %@",[_flipController clientAddress]);
-    NSLog(@"Port: %@",[_flipController port]);
+    NSLog(@"Server IP: %@",_serverIP);
+    NSLog(@"Client IP: %@",_clientIP);
+    NSLog(@"Port: %@", _portNum);
     
     //NSString *currentAddress = [_flipController address];
     
@@ -94,10 +106,10 @@ bool isPlaying = NO;
 -(IBAction)stepperValueChanged:(id)sender
 {
     NSMutableURLRequest *request;
-    NSError *requestError;
-    NSURLResponse *response = nil;
     NSString *URLString;
-    NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/application/setVolume?level=", [_flipController serverAddress], [_flipController port],[_flipController clientAddress]];
+    NSOperationQueue *queue;
+    
+    NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/application/setVolume?level=", _serverIP, _portNum, _clientIP];
 
     UIStepper *stepper = (UIStepper *)sender;
     stepper.maximumValue = 10;
@@ -111,20 +123,17 @@ bool isPlaying = NO;
                                   timeoutInterval:10];
     [request setHTTPMethod: @"GET"];
     
-//    NSOperationQueue *queue;
-//    NSData *data;
-//    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(response, data, requestError){
-//        if ([data length] > 0 && requestError == nil)
-//            [delegate receivedData:data];
-//        else if ([data length] == 0 && requestError == nil)
-//            [delegate emptyReply];
-//        else if (requestError != nil && requestError.code == ERROR_CODE_TIMEOUT)
-//            [delegate timedOut];
-//        else if (requestError != nil)
-//            [delegate downloadError:requestError];
-//    }];
-    
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&requestError];
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+    {
+//                if ([data length] > 0 && requestError == nil)
+//                    [delegate receivedData:data];
+//                else if ([data length] == 0 && requestError == nil)
+//                    [delegate emptyReply];
+//                else if (requestError != nil && requestError.code == ERROR_CODE_TIMEOUT)
+//                    [delegate timedOut];
+//                else if (requestError != nil)
+//                    [delegate downloadError:requestError];
+    }];
 
 }
 
@@ -145,5 +154,7 @@ bool isPlaying = NO;
 
     }
 }
+
+
 
 @end

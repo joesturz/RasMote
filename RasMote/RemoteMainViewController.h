@@ -13,6 +13,12 @@
 @property(strong, nonatomic) RemoteFlipsideViewController *flipController;
 @property(weak, nonatomic) IBOutlet UILabel *volumeLevel;
 @property(weak, nonatomic) RemoteMainViewController *delegate;
+@property(weak, nonatomic) NSUserDefaults *defaultSettings;
+
+@property(weak, nonatomic) NSString *serverIP;
+@property(weak, nonatomic) NSString *clientIP;
+@property(weak, nonatomic) NSString *portNum;
+
 
 -(IBAction)buttonTapped:(id)sender;
 -(IBAction)stepperValueChanged:(id)sender;
