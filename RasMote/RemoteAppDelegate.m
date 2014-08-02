@@ -12,9 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [application setStatusBarHidden:NO];
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
-    //[[UINavigationBar appearance]setShadowImage:[[UIImage alloc] init]];
     // Override point for customization after application launch.
     return YES;
 }
