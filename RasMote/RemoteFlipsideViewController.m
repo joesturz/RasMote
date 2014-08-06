@@ -28,11 +28,12 @@
     self.serverAddressField.delegate = self;
     self.portField.delegate = self;
 // Do any additional setup after loading the view, typically from a nib.
+    
+    
     _defaultSettings = [NSUserDefaults standardUserDefaults];
     [self setClientAddress:[_defaultSettings stringForKey:@"ClientAddress"]];
     [self setServerAddress:[_defaultSettings stringForKey:@"ServerAddress"]];
     [self setPort:[_defaultSettings stringForKey:@"PortNumber"]];
-
 }
 
 - (void)didReceiveMemoryWarning

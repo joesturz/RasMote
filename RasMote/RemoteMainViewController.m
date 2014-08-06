@@ -18,19 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _delegate = self;
     _defaultSettings = [NSUserDefaults standardUserDefaults];
-    if (_flipController == nil)
-    {
-        _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
-        _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
-        _portNum = [_defaultSettings stringForKey:@"PortNumber"];
-    }
-    else
-    {
-        _serverIP = [_flipController serverAddress];
-        _clientIP = [_flipController clientAddress];
-        _portNum = [_flipController port];
-    }
+    
+    _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
+    _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
+    _portNum = [_defaultSettings stringForKey:@"PortNumber"];
 	// Do any additional setup after loading the view, typically from a nib.
 //    self.flipController = [[RemoteFlipsideViewController alloc] initWithNibName:@"RemoteFlipSideViewController" bundle:Nil];
 //    self.flipController.delegate = self;
@@ -51,11 +44,25 @@
 bool isPlaying = NO;
 -(IBAction)buttonTapped:(id)sender
 {
+    _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
+    _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
+    _portNum = [_defaultSettings stringForKey:@"PortNumber"];
+    if ([_serverIP length] == 0 || [_clientIP length] == 0 || [_portNum length] == 0)
+    {
+        NSLog(@"The Stuff inst set");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Please add settings"
+                              message:@""
+                              delegate:nil  // set nil if you don't want the yes button callback
+                              cancelButtonTitle:@"Cancel"
+                              otherButtonTitles:@"OK", nil];
+        [alert show];
+    }
+    
     UIButton *myButton = (UIButton *)sender;
     
     NSMutableURLRequest *request;
-    NSError *requestError;
-    NSURLResponse *response = nil;
+    NSOperationQueue *queue;
     NSString *URLString;
     NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/", _serverIP, _portNum, _clientIP];
 
@@ -105,7 +112,18 @@ bool isPlaying = NO;
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                   timeoutInterval:10];
     [request setHTTPMethod: @"GET"];
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&requestError];
+
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if ([data length] > 0 && error == nil)
+             [_delegate receivedData:data];
+         else if ([data length] == 0 && error == nil)
+             [_delegate emptyReply];
+         else if (error != nil)
+             [_delegate timedOut];
+         else if (error != nil)
+             [_delegate downloadError:error];
+     }];
 }
 -(IBAction)stepperValueChanged:(id)sender
 {
@@ -129,14 +147,14 @@ bool isPlaying = NO;
     
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
     {
-//                if ([data length] > 0 && requestError == nil)
-//                    [delegate receivedData:data];
-//                else if ([data length] == 0 && requestError == nil)
-//                    [delegate emptyReply];
-//                else if (requestError != nil && requestError.code == ERROR_CODE_TIMEOUT)
-//                    [delegate timedOut];
-//                else if (requestError != nil)
-//                    [delegate downloadError:requestError];
+                if ([data length] > 0 && error == nil)
+                    [_delegate receivedData:data];
+                else if ([data length] == 0 && error == nil)
+                    [_delegate emptyReply];
+                else if (error != nil)
+                    [_delegate timedOut];
+                else if (error != nil)
+                    [_delegate downloadError:error];
     }];
 
 }
@@ -158,6 +176,27 @@ bool isPlaying = NO;
 
     }
 }
+-(void)receivedData:(NSData*)data
+{
+    NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString* newStrNullTerm = [NSString stringWithUTF8String:[data bytes]];
+    NSLog(@"Not Null Term: %@",newStr);
+    NSLog(@"Null Term: %@",newStrNullTerm);
+    
+}
+-(void)emptyReply
+{
+    
+}
+-(void)timedOut
+{
+    
+}
+-(void)downloadError:(NSError*) error
+{
+    
+}
+
 
 
 
