@@ -42,6 +42,7 @@
     
 }
 bool isPlaying = NO;
+NSMutableData *dataObj;
 -(IBAction)buttonTapped:(id)sender
 {
     _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
@@ -65,7 +66,8 @@ bool isPlaying = NO;
     NSOperationQueue *queue;
     NSString *URLString;
     NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/", _serverIP, _portNum, _clientIP];
-
+    //http://192.168.1.64:32400/system/players/192.168.1.64/navigation/moveUp
+    
     NSLog(@"Server IP: %@",_serverIP);
     NSLog(@"Client IP: %@",_clientIP);
     NSLog(@"Port: %@", _portNum);
@@ -105,26 +107,47 @@ bool isPlaying = NO;
     else if ([myButton.currentTitle isEqualToString:@"Menu"])
     {
         URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"navigation/toggleOSD"];
-        NSLog(@"Back button tapped!");
+        NSLog(@"Menu button tapped!");
     }
     
     request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                   timeoutInterval:10];
     [request setHTTPMethod: @"GET"];
-
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-     {
-         if ([data length] > 0 && error == nil)
-             [_delegate receivedData:data];
-         else if ([data length] == 0 && error == nil)
-             [_delegate emptyReply];
-         else if (error != nil)
-             [_delegate timedOut];
-         else if (error != nil)
-             [_delegate downloadError:error];
-     }];
+    [self makeConnectionWithRequest:request];
+    
 }
+-(void)makeConnectionWithRequest:(NSURLRequest *) request
+{
+    dataObj = [NSMutableData dataWithCapacity:0];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (!conn)
+    {
+        dataObj = nil;
+        NSLog(@"The Connection Failed");
+    }
+
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"Recieve Response");
+    // This method is called when the server has determined that it
+    // has enough information to create the NSURLResponse object.
+    
+    // It can be called multiple times, for example in the case of a
+    // redirect, so each time we reset the data.
+    
+    // receivedData is an instance variable declared elsewhere.
+    [dataObj setLength:0];
+}
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"Recieve Data");
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+    [dataObj appendData:data];
+}
+
 -(IBAction)stepperValueChanged:(id)sender
 {
     NSMutableURLRequest *request;
@@ -144,19 +167,7 @@ bool isPlaying = NO;
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                   timeoutInterval:10];
     [request setHTTPMethod: @"GET"];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-    {
-                if ([data length] > 0 && error == nil)
-                    [_delegate receivedData:data];
-                else if ([data length] == 0 && error == nil)
-                    [_delegate emptyReply];
-                else if (error != nil)
-                    [_delegate timedOut];
-                else if (error != nil)
-                    [_delegate downloadError:error];
-    }];
-
+    [self makeConnectionWithRequest:request];
 }
 
 #pragma mark - Flipside View
@@ -186,15 +197,15 @@ bool isPlaying = NO;
 }
 -(void)emptyReply
 {
-    
+    NSLog(@"Empty Reply");
 }
 -(void)timedOut
 {
-    
+    NSLog(@"Time Out");
 }
 -(void)downloadError:(NSError*) error
 {
-    
+    NSLog(@"Error");
 }
 
 
