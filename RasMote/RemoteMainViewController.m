@@ -132,7 +132,7 @@ NSMutableData *dataObj;
     //NSLog(@"Recieve Response");
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *) response;
     
-    NSLog(@"Recieve Response, Status Code: %d", [HTTPResponse statusCode]);
+    NSLog(@"Recieve Response, Status Code: %ld", (long)[HTTPResponse statusCode]);
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse object.
     
@@ -164,7 +164,7 @@ NSMutableData *dataObj;
 -(void)connectionDidFinishLoading:(NSURLConnection *) connection
 {
     NSLog(@"connectionDidFinishLoading");
-    NSLog(@"Succeeded! Received %d bytes of data",[dataObj length]);
+    NSLog(@"Succeeded! Received %lu bytes of data",(unsigned long)[dataObj length]);
 }
 -(IBAction)stepperValueChanged:(id)sender
 {
@@ -224,8 +224,4 @@ NSMutableData *dataObj;
 {
     NSLog(@"Error");
 }
-
-
-
-
 @end
