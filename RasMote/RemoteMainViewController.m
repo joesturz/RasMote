@@ -45,12 +45,12 @@ bool isPlaying = NO;
 NSMutableData *dataObj;
 -(IBAction)buttonTapped:(id)sender
 {
-    _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
-    _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
+    _serverIP = [_defaultSettings stringForKey:@"ServerAddress"];
+    _clientIP = [_defaultSettings stringForKey:@"ClientAddress"];
     _portNum = [_defaultSettings stringForKey:@"PortNumber"];
     if ([_serverIP length] == 0 || [_clientIP length] == 0 || [_portNum length] == 0)
     {
-        NSLog(@"The Stuff inst set");
+        NSLog(@"The credentials are not set");
         UIAlertView *alert = [[UIAlertView alloc]
                               initWithTitle:@"Please add settings"
                               message:@""
@@ -63,7 +63,6 @@ NSMutableData *dataObj;
     UIButton *myButton = (UIButton *)sender;
     
     NSMutableURLRequest *request;
-    NSOperationQueue *queue;
     NSString *URLString;
     NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/", _serverIP, _portNum, _clientIP];
     //http://192.168.1.64:32400/system/players/192.168.1.64/navigation/moveUp
@@ -130,7 +129,10 @@ NSMutableData *dataObj;
 }
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-    NSLog(@"Recieve Response");
+    //NSLog(@"Recieve Response");
+    NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *) response;
+    
+    NSLog(@"Recieve Response, Status Code: %d", [HTTPResponse statusCode]);
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse object.
     
@@ -147,12 +149,27 @@ NSMutableData *dataObj;
     // receivedData is an instance variable declared elsewhere.
     [dataObj appendData:data];
 }
-
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"didFailWithError");
+    NSLog(@"Connection failed: %@", [error description]);
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:[error localizedDescription]
+                          message:@""
+                          delegate:nil  // set nil if you don't want the yes button callback
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"OK", nil];
+    [alert show];
+}
+-(void)connectionDidFinishLoading:(NSURLConnection *) connection
+{
+    NSLog(@"connectionDidFinishLoading");
+    NSLog(@"Succeeded! Received %d bytes of data",[dataObj length]);
+}
 -(IBAction)stepperValueChanged:(id)sender
 {
     NSMutableURLRequest *request;
     NSString *URLString;
-    NSOperationQueue *queue;
     
     NSString *baseURLString = [NSString stringWithFormat:@"http://%@:%@/system/players/%@/application/setVolume?level=", _serverIP, _portNum, _clientIP];
 
