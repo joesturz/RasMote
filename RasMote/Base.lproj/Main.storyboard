@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rQl-PL-IFJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rQl-PL-IFJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -58,6 +58,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonPressed:" destination="rQl-PL-IFJ" eventType="touchDown" id="LLA-ZF-jae"/>
                                     <action selector="buttonTapped:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="LAs-b7-0jb"/>
                                 </connections>
                             </button>
@@ -188,6 +189,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="test" destination="S0x-VP-HP5" id="PMg-IJ-iN7"/>
                         <outlet property="volumeLevel" destination="cLm-xC-DhB" id="KLu-fo-Wf3"/>
                     </connections>
                 </viewController>
