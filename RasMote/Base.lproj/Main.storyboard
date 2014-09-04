@@ -58,7 +58,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonPressed:" destination="rQl-PL-IFJ" eventType="touchDown" id="LLA-ZF-jae"/>
                                     <action selector="buttonTapped:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="LAs-b7-0jb"/>
                                 </connections>
                             </button>
@@ -189,7 +188,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="test" destination="S0x-VP-HP5" id="PMg-IJ-iN7"/>
                         <outlet property="volumeLevel" destination="cLm-xC-DhB" id="KLu-fo-Wf3"/>
                     </connections>
                 </viewController>
