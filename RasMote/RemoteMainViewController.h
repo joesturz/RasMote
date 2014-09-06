@@ -18,10 +18,13 @@
 @property(weak, nonatomic) NSString *serverIP;
 @property(weak, nonatomic) NSString *clientIP;
 @property(weak, nonatomic) NSString *portNum;
+@property(nonatomic, retain) NSTimer *timer;
 
 
 -(IBAction)buttonTapped:(id)sender;
 -(IBAction)stepperValueChanged:(id)sender;
+-(IBAction)held:(id)sender;
+-(IBAction)released:(id)sender;
 
 
 @end

@@ -25,8 +25,7 @@
     _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
     _portNum = [_defaultSettings stringForKey:@"PortNumber"];
 	// Do any additional setup after loading the view, typically from a nib.
-//    self.flipController = [[RemoteFlipsideViewController alloc] initWithNibName:@"RemoteFlipSideViewController" bundle:Nil];
-//    self.flipController.delegate = self;
+
 }
 -(UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -43,8 +42,11 @@
 }
 bool isPlaying = NO;
 NSMutableData *dataObj;
+
+
 -(IBAction)buttonTapped:(id)sender
 {
+    //self.isHeld = NO;
     _serverIP = [_defaultSettings stringForKey:@"ServerAddress"];
     _clientIP = [_defaultSettings stringForKey:@"ClientAddress"];
     _portNum = [_defaultSettings stringForKey:@"PortNumber"];
@@ -116,6 +118,24 @@ NSMutableData *dataObj;
     [self makeConnectionWithRequest:request];
     
 }
+-(IBAction)upDownButtonTapped:(NSTimer *)timer
+{
+    UIButton *myButton = (UIButton *)[timer userInfo];
+    [self buttonTapped:myButton];
+}
+
+-(IBAction)held:(id)sender
+{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(upDownButtonTapped:) userInfo:sender repeats:YES];
+}
+-(IBAction)released:(id)sender
+{
+    if (self.timer != nil) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
 -(void)makeConnectionWithRequest:(NSURLRequest *) request
 {
     dataObj = [NSMutableData dataWithCapacity:0];
