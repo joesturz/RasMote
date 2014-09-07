@@ -122,18 +122,26 @@ NSMutableData *dataObj;
 {
     UIButton *myButton = (UIButton *)[timer userInfo];
     [self buttonTapped:myButton];
+    self.upDownCounter++;
 }
 
 -(IBAction)held:(id)sender
 {
+    //[self buttonTapped:sender];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(upDownButtonTapped:) userInfo:sender repeats:YES];
 }
 -(IBAction)released:(id)sender
 {
-    if (self.timer != nil) {
+    if (self.timer != nil)
+    {
         [self.timer invalidate];
         self.timer = nil;
     }
+    if (self.upDownCounter < 1)
+    {
+        [self buttonTapped:sender];
+    }
+    self.upDownCounter = 0;
 }
 
 -(void)makeConnectionWithRequest:(NSURLRequest *) request

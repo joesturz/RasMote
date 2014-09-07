@@ -19,6 +19,7 @@
 @property(weak, nonatomic) NSString *clientIP;
 @property(weak, nonatomic) NSString *portNum;
 @property(nonatomic, retain) NSTimer *timer;
+@property (nonatomic) NSInteger upDownCounter;
 
 
 -(IBAction)buttonTapped:(id)sender;
