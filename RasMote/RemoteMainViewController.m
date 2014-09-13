@@ -110,6 +110,26 @@ NSMutableData *dataObj;
         URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"navigation/toggleOSD"];
         NSLog(@"Menu button tapped!");
     }
+    else if ([myButton.currentTitle isEqualToString:@"▶︎▶︎"])
+    {
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/fastForward"];
+        NSLog(@"▶︎▶︎ button tapped!");
+    }
+    else if ([myButton.currentTitle isEqualToString:@"◀︎◀︎"])
+    {
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/rewind"];
+        NSLog(@"◀︎◀︎ button tapped!");
+    }
+    else if ([myButton.currentTitle isEqualToString:@"◼︎"])
+    {
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/stop"];
+        NSLog(@"◼︎ button tapped!");
+    }
+    else if ([myButton.currentTitle isEqualToString:@"▶︎"])
+    {
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/play"];
+        NSLog(@"▶︎ button tapped!");
+    }
     
     request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
