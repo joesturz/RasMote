@@ -112,12 +112,12 @@ NSMutableData *dataObj;
     }
     else if ([myButton.currentTitle isEqualToString:@"▶︎▶︎"])
     {
-        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/fastForward"];
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/bigStepForward"];
         NSLog(@"▶︎▶︎ button tapped!");
     }
     else if ([myButton.currentTitle isEqualToString:@"◀︎◀︎"])
     {
-        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/rewind"];
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/bigStepBack"];
         NSLog(@"◀︎◀︎ button tapped!");
     }
     else if ([myButton.currentTitle isEqualToString:@"◼︎"])
