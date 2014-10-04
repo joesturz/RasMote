@@ -3,35 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "IconRasMoteSmall.png",
+      "filename" : "IconRasMoteSMx2.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "IconRasMoteSMx3.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "IconRasMoteSL.png",
+      "filename" : "IconRasMoteSLx2.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "IconRasMoteSLx3.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "IconRasMote.png",
+      "filename" : "IconRasMoteLGx2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "IconRasMoteLG.png",
+      "filename" : "IconRasMoteLGx3.png",
       "scale" : "3x"
     }
   ],
