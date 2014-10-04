@@ -165,7 +165,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="D4Z-rU-2sI"/>
+                                    <action selector="held:" destination="rQl-PL-IFJ" eventType="touchDown" id="FLi-qF-HGi"/>
+                                    <action selector="released:" destination="rQl-PL-IFJ" eventType="touchUpOutside" id="V17-8c-ipH"/>
+                                    <action selector="released:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="nCO-Nt-bh8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YG0-Ad-oNw">
@@ -176,7 +178,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="p1c-Ou-r9x"/>
+                                    <action selector="held:" destination="rQl-PL-IFJ" eventType="touchDown" id="iC0-YU-tyT"/>
+                                    <action selector="released:" destination="rQl-PL-IFJ" eventType="touchUpOutside" id="bhX-tI-viL"/>
+                                    <action selector="released:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="u2N-OP-1Kj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XH5-22-I7b">
