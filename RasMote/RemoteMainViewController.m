@@ -130,6 +130,11 @@ NSMutableData *dataObj;
         URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/play"];
         NSLog(@"▶︎ button tapped!");
     }
+    else if ([myButton.currentTitle isEqualToString:@"❚❚"])
+    {
+        URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/pause"];
+        NSLog(@"❚❚ button tapped!");
+    }
     
     request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
