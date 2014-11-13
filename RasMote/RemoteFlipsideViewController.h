@@ -16,8 +16,9 @@
 @end
 
 @interface RemoteFlipsideViewController : UIViewController <UITextFieldDelegate>
-{
-}
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField;
+-(IBAction) clickBackgound;
 
 @property (weak, nonatomic) id <RemoteFlipsideViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *clientAddressField;

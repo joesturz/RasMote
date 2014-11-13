@@ -19,6 +19,11 @@
     NSString *serverAddress;
 }
 
+-(IBAction)clickBackgound
+{
+    [self.view endEditing:YES];
+}
+
 //NSMutableURLRequest *request;
 
 - (void)viewDidLoad

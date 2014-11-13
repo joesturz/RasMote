@@ -282,7 +282,7 @@
                         <viewControllerLayoutGuide type="top" id="rBX-Xh-dAM"/>
                         <viewControllerLayoutGuide type="bottom" id="mPd-kI-uoc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tg4-aq-CMy">
+                    <view key="view" contentMode="scaleToFill" id="tg4-aq-CMy" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -307,6 +307,9 @@
                                 <rect key="frame" x="182" y="145" width="136" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kIf-nA-PKG" id="Gx9-Nx-XPS"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Plex Client IP :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuI-w1-Lt1">
                                 <rect key="frame" x="62" y="149" width="112" height="21"/>
@@ -318,11 +321,17 @@
                                 <rect key="frame" x="182" y="183" width="77" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kIf-nA-PKG" id="Yld-pC-Gzh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.1.16" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F6o-eL-85H">
                                 <rect key="frame" x="182" y="111" width="136" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kIf-nA-PKG" id="bKV-6L-epz"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Plex Server IP :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89j-uu-QAX">
                                 <rect key="frame" x="57" y="115" width="118" height="21"/>
@@ -355,6 +364,9 @@
                             <constraint firstItem="hED-2o-FLw" firstAttribute="leading" secondItem="tg4-aq-CMy" secondAttribute="leadingMargin" constant="-16" id="bOR-bb-0q2"/>
                             <constraint firstAttribute="centerX" secondItem="F0n-MJ-gD7" secondAttribute="centerX" id="hoP-Vh-dnD"/>
                         </constraints>
+                        <connections>
+                            <action selector="clickBackgound" destination="kIf-nA-PKG" eventType="touchUpInside" id="yWq-Qn-ddr"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="clientAddressField" destination="xe9-MO-V5o" id="lFf-01-cq9"/>
