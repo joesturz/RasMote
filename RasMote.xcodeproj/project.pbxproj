@@ -22,6 +22,8 @@
 		D84EC353196393FF00FC36DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC332196393FF00FC36DF /* UIKit.framework */; };
 		D84EC35B196393FF00FC36DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84EC359196393FF00FC36DF /* InfoPlist.strings */; };
 		D84EC35D196393FF00FC36DF /* RasMoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC35C196393FF00FC36DF /* RasMoteTests.m */; };
+		D8D7F9C31A8DAD52001A84D7 /* RasMote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D7F9C11A8DAD52001A84D7 /* RasMote.xcdatamodeld */; };
+		D8D7F9C51A8DAE4F001A84D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		D84EC358196393FF00FC36DF /* RasMoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RasMoteTests-Info.plist"; sourceTree = "<group>"; };
 		D84EC35A196393FF00FC36DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D84EC35C196393FF00FC36DF /* RasMoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RasMoteTests.m; sourceTree = "<group>"; };
+		D8D7F9C21A8DAD52001A84D7 /* RasMote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RasMote.xcdatamodel; sourceTree = "<group>"; };
+		D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D7F9C51A8DAE4F001A84D7 /* CoreData.framework in Frameworks */,
 				D84EC331196393FF00FC36DF /* CoreGraphics.framework in Frameworks */,
 				D84EC333196393FF00FC36DF /* UIKit.framework in Frameworks */,
 				D84EC32F196393FF00FC36DF /* Foundation.framework in Frameworks */,
@@ -104,6 +109,7 @@
 		D84EC32D196393FF00FC36DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */,
 				D84EC32E196393FF00FC36DF /* Foundation.framework */,
 				D84EC330196393FF00FC36DF /* CoreGraphics.framework */,
 				D84EC332196393FF00FC36DF /* UIKit.framework */,
@@ -122,6 +128,7 @@
 				D84EC344196393FF00FC36DF /* RemoteMainViewController.m */,
 				D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */,
 				D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */,
+				D8D7F9C11A8DAD52001A84D7 /* RasMote.xcdatamodeld */,
 				D84EC349196393FF00FC36DF /* Images.xcassets */,
 				D84EC335196393FF00FC36DF /* Supporting Files */,
 			);
@@ -258,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D7F9C31A8DAD52001A84D7 /* RasMote.xcdatamodeld in Sources */,
 				D84EC348196393FF00FC36DF /* RemoteFlipsideViewController.m in Sources */,
 				D84EC33F196393FF00FC36DF /* RemoteAppDelegate.m in Sources */,
 				D84EC33B196393FF00FC36DF /* main.m in Sources */,
@@ -488,6 +496,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8D7F9C11A8DAD52001A84D7 /* RasMote.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8D7F9C21A8DAD52001A84D7 /* RasMote.xcdatamodel */,
+			);
+			currentVersion = D8D7F9C21A8DAD52001A84D7 /* RasMote.xcdatamodel */;
+			path = RasMote.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D84EC323196393FF00FC36DF /* Project object */;
 }
