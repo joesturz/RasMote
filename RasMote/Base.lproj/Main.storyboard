@@ -274,10 +274,10 @@
             </objects>
             <point key="canvasLocation" x="-620.5" y="-282.5"/>
         </scene>
-        <!--Clients-->
+        <!--ClientListTableViewController-->
         <scene sceneID="gxQ-OL-2Zi">
             <objects>
-                <tableViewController id="DTx-FN-YC4" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ClientListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DTx-FN-YC4" userLabel="ClientListTableViewController" customClass="RemoteClientListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ED3-jH-2F8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -343,10 +343,10 @@
             </objects>
             <point key="canvasLocation" x="945.5" y="-1069.5"/>
         </scene>
-        <!--Add Client-->
+        <!--RemoteAddClientViewController-->
         <scene sceneID="SYt-my-DnZ">
             <objects>
-                <viewController id="zwD-7N-SbF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RemoteAddClientViewController" id="zwD-7N-SbF" userLabel="RemoteAddClientViewController" customClass="RemoteAddClientViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sfX-51-jZa"/>
                         <viewControllerLayoutGuide type="bottom" id="NtQ-he-Jes"/>

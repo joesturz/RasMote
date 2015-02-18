@@ -22,7 +22,11 @@
 		D84EC353196393FF00FC36DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC332196393FF00FC36DF /* UIKit.framework */; };
 		D84EC35B196393FF00FC36DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84EC359196393FF00FC36DF /* InfoPlist.strings */; };
 		D84EC35D196393FF00FC36DF /* RasMoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC35C196393FF00FC36DF /* RasMoteTests.m */; };
-		D8D7F9C31A8DAD52001A84D7 /* RasMote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8D7F9C11A8DAD52001A84D7 /* RasMote.xcdatamodeld */; };
+		D8AAFAF71A9444030072BC62 /* RemoteClientListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */; };
+		D8AAFAFA1A9446630072BC62 /* RemoteAddClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */; };
+		D8AAFB091A9451300072BC62 /* RasMote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFB071A9451300072BC62 /* RasMote.xcdatamodeld */; };
+		D8AAFB0C1A9452790072BC62 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFB0B1A9452790072BC62 /* Credentials.m */; };
+		D8AAFB0F1A9452790072BC62 /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFB0E1A9452790072BC62 /* Client.m */; };
 		D8D7F9C51A8DAE4F001A84D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +62,15 @@
 		D84EC358196393FF00FC36DF /* RasMoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RasMoteTests-Info.plist"; sourceTree = "<group>"; };
 		D84EC35A196393FF00FC36DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D84EC35C196393FF00FC36DF /* RasMoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RasMoteTests.m; sourceTree = "<group>"; };
-		D8D7F9C21A8DAD52001A84D7 /* RasMote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RasMote.xcdatamodel; sourceTree = "<group>"; };
+		D8AAFAF51A9444030072BC62 /* RemoteClientListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteClientListTableViewController.h; sourceTree = "<group>"; };
+		D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteClientListTableViewController.m; sourceTree = "<group>"; };
+		D8AAFAF81A9446630072BC62 /* RemoteAddClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAddClientViewController.h; sourceTree = "<group>"; };
+		D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAddClientViewController.m; sourceTree = "<group>"; };
+		D8AAFB081A9451300072BC62 /* RasMote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RasMote.xcdatamodel; sourceTree = "<group>"; };
+		D8AAFB0A1A9452790072BC62 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		D8AAFB0B1A9452790072BC62 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
+		D8AAFB0D1A9452790072BC62 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
+		D8AAFB0E1A9452790072BC62 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
 		D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -121,15 +133,9 @@
 		D84EC334196393FF00FC36DF /* RasMote */ = {
 			isa = PBXGroup;
 			children = (
-				D84EC33D196393FF00FC36DF /* RemoteAppDelegate.h */,
-				D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */,
-				D84EC340196393FF00FC36DF /* Main.storyboard */,
-				D84EC343196393FF00FC36DF /* RemoteMainViewController.h */,
-				D84EC344196393FF00FC36DF /* RemoteMainViewController.m */,
-				D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */,
-				D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */,
-				D8D7F9C11A8DAD52001A84D7 /* RasMote.xcdatamodeld */,
-				D84EC349196393FF00FC36DF /* Images.xcassets */,
+				D8AAFAFD1A94492D0072BC62 /* Model and Model Classes */,
+				D8AAFAFC1A94489D0072BC62 /* Application Resources */,
+				D8AAFAFB1A9448070072BC62 /* View Controllers */,
 				D84EC335196393FF00FC36DF /* Supporting Files */,
 			);
 			path = RasMote;
@@ -162,6 +168,44 @@
 				D84EC359196393FF00FC36DF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D8AAFAFB1A9448070072BC62 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC33D196393FF00FC36DF /* RemoteAppDelegate.h */,
+				D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */,
+				D84EC343196393FF00FC36DF /* RemoteMainViewController.h */,
+				D84EC344196393FF00FC36DF /* RemoteMainViewController.m */,
+				D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */,
+				D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */,
+				D8AAFAF51A9444030072BC62 /* RemoteClientListTableViewController.h */,
+				D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */,
+				D8AAFAF81A9446630072BC62 /* RemoteAddClientViewController.h */,
+				D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D8AAFAFC1A94489D0072BC62 /* Application Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D84EC340196393FF00FC36DF /* Main.storyboard */,
+				D84EC349196393FF00FC36DF /* Images.xcassets */,
+			);
+			name = "Application Resources";
+			sourceTree = "<group>";
+		};
+		D8AAFAFD1A94492D0072BC62 /* Model and Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D8AAFB071A9451300072BC62 /* RasMote.xcdatamodeld */,
+				D8AAFB0D1A9452790072BC62 /* Client.h */,
+				D8AAFB0E1A9452790072BC62 /* Client.m */,
+				D8AAFB0A1A9452790072BC62 /* Credentials.h */,
+				D8AAFB0B1A9452790072BC62 /* Credentials.m */,
+			);
+			name = "Model and Model Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D7F9C31A8DAD52001A84D7 /* RasMote.xcdatamodeld in Sources */,
+				D8AAFB091A9451300072BC62 /* RasMote.xcdatamodeld in Sources */,
 				D84EC348196393FF00FC36DF /* RemoteFlipsideViewController.m in Sources */,
+				D8AAFAFA1A9446630072BC62 /* RemoteAddClientViewController.m in Sources */,
+				D8AAFAF71A9444030072BC62 /* RemoteClientListTableViewController.m in Sources */,
 				D84EC33F196393FF00FC36DF /* RemoteAppDelegate.m in Sources */,
+				D8AAFB0F1A9452790072BC62 /* Client.m in Sources */,
 				D84EC33B196393FF00FC36DF /* main.m in Sources */,
+				D8AAFB0C1A9452790072BC62 /* Credentials.m in Sources */,
 				D84EC345196393FF00FC36DF /* RemoteMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,14 +546,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D8D7F9C11A8DAD52001A84D7 /* RasMote.xcdatamodeld */ = {
+		D8AAFB071A9451300072BC62 /* RasMote.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D8D7F9C21A8DAD52001A84D7 /* RasMote.xcdatamodel */,
+				D8AAFB081A9451300072BC62 /* RasMote.xcdatamodel */,
 			);
-			currentVersion = D8D7F9C21A8DAD52001A84D7 /* RasMote.xcdatamodel */;
+			currentVersion = D8AAFB081A9451300072BC62 /* RasMote.xcdatamodel */;
 			path = RasMote.xcdatamodeld;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
