@@ -71,6 +71,7 @@
 		D8AAFB0B1A9452790072BC62 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		D8AAFB0D1A9452790072BC62 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		D8AAFB0E1A9452790072BC62 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
+		D8AAFB101A945E190072BC62 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +122,7 @@
 		D84EC32D196393FF00FC36DF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8AAFB101A945E190072BC62 /* libsqlite3.dylib */,
 				D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */,
 				D84EC32E196393FF00FC36DF /* Foundation.framework */,
 				D84EC330196393FF00FC36DF /* CoreGraphics.framework */,

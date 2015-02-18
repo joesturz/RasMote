@@ -354,12 +354,38 @@
                     <view key="view" contentMode="scaleToFill" id="2PM-Wp-fWE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6i-67-nOd">
+                                <rect key="frame" x="58" y="107" width="258" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zwD-7N-SbF" id="dl8-DD-WfH"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u6i-67-nOd" firstAttribute="leading" secondItem="2PM-Wp-fWE" secondAttribute="leadingMargin" constant="42" id="7dX-9I-fA6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="u6i-67-nOd" secondAttribute="trailing" constant="43" id="8Cd-Aw-4lK"/>
+                            <constraint firstItem="u6i-67-nOd" firstAttribute="top" secondItem="sfX-51-jZa" secondAttribute="bottom" constant="43" id="phM-0T-wnX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Client" id="t7L-AL-JZv">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ERS-K3-5s9"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Dwf-Is-F0W"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ERS-K3-5s9">
+                            <connections>
+                                <action selector="cancel:" destination="zwD-7N-SbF" id="rbh-S4-YBo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Dwf-Is-F0W">
+                            <connections>
+                                <action selector="save:" destination="zwD-7N-SbF" id="WMX-n4-Agi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="u6i-67-nOd" id="hE2-ll-bVF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-hG-kCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
