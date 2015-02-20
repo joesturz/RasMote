@@ -17,3 +17,10 @@
 @property (nonatomic, retain) Credentials *credentials;
 
 @end
+
+//@interface Client (CoreDataGeneratedAccessors)
+//
+//-(void)addCredentialsObject:(NSManagedObject *)value;
+//-(void)removeCredentialsObject:(NSManagedObject *)value;
+//
+//@end

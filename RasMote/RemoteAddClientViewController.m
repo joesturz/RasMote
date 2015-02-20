@@ -9,7 +9,7 @@
 #import "RemoteAddClientViewController.h"
 #import "Client.h"
 
-@interface RemoteAddClientViewController ()
+@interface RemoteAddClientViewController ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet UITextField *nameTextField;
 
@@ -21,6 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Add Client";
+    
+    [[self nameTextField] setDelegate:self];
     
     [self.nameTextField becomeFirstResponder];
 }

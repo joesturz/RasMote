@@ -8,19 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@class RemoteFlipsideViewController;
+@class RemoteClientDetailViewController;
 
-@protocol RemoteFlipsideViewControllerDelegate
-- (void)flipsideViewControllerDidFinish:(RemoteFlipsideViewController *)controller;
+@protocol RemoteClientDetailViewControllerDelegate
+- (void)flipsideViewControllerDidFinish:(RemoteClientDetailViewController *)controller;
 
 @end
 
-@interface RemoteFlipsideViewController : UIViewController <UITextFieldDelegate>
+@interface RemoteClientDetailViewController : UIViewController <UITextFieldDelegate>
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField;
 -(IBAction) clickBackgound;
 
-@property (weak, nonatomic) id <RemoteFlipsideViewControllerDelegate> delegate;
+@property (weak, nonatomic) id <RemoteClientDetailViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *clientAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *serverAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *portField;

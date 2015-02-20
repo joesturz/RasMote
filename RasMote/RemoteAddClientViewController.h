@@ -12,7 +12,7 @@
 
 @class Client;
 
-@interface RemoteAddClientViewController : UIViewController
+@interface RemoteAddClientViewController : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic, strong) Client *client;
 @property (nonatomic, unsafe_unretained) id <ClientAddDelegate> delegate;

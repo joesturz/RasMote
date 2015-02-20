@@ -15,13 +15,14 @@
 		D84EC33F196393FF00FC36DF /* RemoteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */; };
 		D84EC342196393FF00FC36DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D84EC340196393FF00FC36DF /* Main.storyboard */; };
 		D84EC345196393FF00FC36DF /* RemoteMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC344196393FF00FC36DF /* RemoteMainViewController.m */; };
-		D84EC348196393FF00FC36DF /* RemoteFlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */; };
+		D84EC348196393FF00FC36DF /* RemoteClientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC347196393FF00FC36DF /* RemoteClientDetailViewController.m */; };
 		D84EC34A196393FF00FC36DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D84EC349196393FF00FC36DF /* Images.xcassets */; };
 		D84EC351196393FF00FC36DF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC350196393FF00FC36DF /* XCTest.framework */; };
 		D84EC352196393FF00FC36DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC32E196393FF00FC36DF /* Foundation.framework */; };
 		D84EC353196393FF00FC36DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84EC332196393FF00FC36DF /* UIKit.framework */; };
 		D84EC35B196393FF00FC36DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D84EC359196393FF00FC36DF /* InfoPlist.strings */; };
 		D84EC35D196393FF00FC36DF /* RasMoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC35C196393FF00FC36DF /* RasMoteTests.m */; };
+		D89184241A96F29A0076F846 /* RemoteClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D89184231A96F29A0076F846 /* RemoteClientTableViewCell.m */; };
 		D8AAFAF71A9444030072BC62 /* RemoteClientListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */; };
 		D8AAFAFA1A9446630072BC62 /* RemoteAddClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */; };
 		D8AAFB091A9451300072BC62 /* RasMote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFB071A9451300072BC62 /* RasMote.xcdatamodeld */; };
@@ -54,14 +55,16 @@
 		D84EC341196393FF00FC36DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D84EC343196393FF00FC36DF /* RemoteMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteMainViewController.h; sourceTree = "<group>"; };
 		D84EC344196393FF00FC36DF /* RemoteMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteMainViewController.m; sourceTree = "<group>"; };
-		D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteFlipsideViewController.h; sourceTree = "<group>"; };
-		D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteFlipsideViewController.m; sourceTree = "<group>"; };
+		D84EC346196393FF00FC36DF /* RemoteClientDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteClientDetailViewController.h; sourceTree = "<group>"; };
+		D84EC347196393FF00FC36DF /* RemoteClientDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteClientDetailViewController.m; sourceTree = "<group>"; };
 		D84EC349196393FF00FC36DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D84EC34F196393FF00FC36DF /* RasMoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RasMoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84EC350196393FF00FC36DF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D84EC358196393FF00FC36DF /* RasMoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RasMoteTests-Info.plist"; sourceTree = "<group>"; };
 		D84EC35A196393FF00FC36DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D84EC35C196393FF00FC36DF /* RasMoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RasMoteTests.m; sourceTree = "<group>"; };
+		D89184221A96F29A0076F846 /* RemoteClientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteClientTableViewCell.h; path = RasMote/RemoteClientTableViewCell.h; sourceTree = "<group>"; };
+		D89184231A96F29A0076F846 /* RemoteClientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteClientTableViewCell.m; path = RasMote/RemoteClientTableViewCell.m; sourceTree = "<group>"; };
 		D8AAFAF51A9444030072BC62 /* RemoteClientListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteClientListTableViewController.h; sourceTree = "<group>"; };
 		D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteClientListTableViewController.m; sourceTree = "<group>"; };
 		D8AAFAF81A9446630072BC62 /* RemoteAddClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAddClientViewController.h; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D84EC334196393FF00FC36DF /* RasMote */,
+				D89184211A96F2350076F846 /* Table Cells */,
 				D84EC356196393FF00FC36DF /* RasMoteTests */,
 				D84EC32D196393FF00FC36DF /* Frameworks */,
 				D84EC32C196393FF00FC36DF /* Products */,
@@ -172,6 +176,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D89184211A96F2350076F846 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D89184221A96F29A0076F846 /* RemoteClientTableViewCell.h */,
+				D89184231A96F29A0076F846 /* RemoteClientTableViewCell.m */,
+			);
+			name = "Table Cells";
+			sourceTree = "<group>";
+		};
 		D8AAFAFB1A9448070072BC62 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,8 +192,8 @@
 				D84EC33E196393FF00FC36DF /* RemoteAppDelegate.m */,
 				D84EC343196393FF00FC36DF /* RemoteMainViewController.h */,
 				D84EC344196393FF00FC36DF /* RemoteMainViewController.m */,
-				D84EC346196393FF00FC36DF /* RemoteFlipsideViewController.h */,
-				D84EC347196393FF00FC36DF /* RemoteFlipsideViewController.m */,
+				D84EC346196393FF00FC36DF /* RemoteClientDetailViewController.h */,
+				D84EC347196393FF00FC36DF /* RemoteClientDetailViewController.m */,
 				D8AAFAF51A9444030072BC62 /* RemoteClientListTableViewController.h */,
 				D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */,
 				D8AAFAF81A9446630072BC62 /* RemoteAddClientViewController.h */,
@@ -311,8 +324,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89184241A96F29A0076F846 /* RemoteClientTableViewCell.m in Sources */,
 				D8AAFB091A9451300072BC62 /* RasMote.xcdatamodeld in Sources */,
-				D84EC348196393FF00FC36DF /* RemoteFlipsideViewController.m in Sources */,
+				D84EC348196393FF00FC36DF /* RemoteClientDetailViewController.m in Sources */,
 				D8AAFAFA1A9446630072BC62 /* RemoteAddClientViewController.m in Sources */,
 				D8AAFAF71A9444030072BC62 /* RemoteClientListTableViewController.m in Sources */,
 				D84EC33F196393FF00FC36DF /* RemoteAppDelegate.m in Sources */,

@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Joe Sturzenegger. All rights reserved.
 //
 
-#import "RemoteFlipsideViewController.h"
+#import "RemoteClientDetailViewController.h"
 
-@interface RemoteFlipsideViewController ()
+@interface RemoteClientDetailViewController ()
 
 @end
 
-@implementation RemoteFlipsideViewController
+@implementation RemoteClientDetailViewController
 {
     NSString *clientAddress;
     NSString *port;

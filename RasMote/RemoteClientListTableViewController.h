@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RemoteAddClientViewController.h"
+#import "Client.h"
 
-@interface RemoteClientListTableViewController : UITableViewController
+@class RemoteClientListTableViewController;
+
+@protocol RemoteClientListTableViewControllerDelegate
+- (void)flipsideViewControllerDidFinish:(RemoteClientListTableViewController *)controller;
+
+@end
+
+
+@interface RemoteClientListTableViewController : UITableViewController <ClientAddDelegate,
+    NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (weak, nonatomic) id <RemoteClientListTableViewControllerDelegate> delegate;
 
 @end

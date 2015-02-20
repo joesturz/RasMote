@@ -7,6 +7,8 @@
 //
 
 #import "RemoteAppDelegate.h"
+#import "RemoteClientListTableViewController.h"
+#import "RemoteMainViewController.h"
 
 @interface RemoteAppDelegate ()
 
@@ -17,6 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+//    UINavigationController *navController = tabBarController.viewControllers[0];
+//    
+//    RemoteClientListTableViewController *clientListVC = (RemoteClientListTableViewController *)navController.topViewController;
+//    clientListVC.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 
@@ -55,16 +63,6 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
-- (NSManagedObjectModel *)managedObjectModel {
-    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"RasMote" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
     if (_persistentStoreCoordinator != nil) {
@@ -101,12 +99,24 @@
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        return nil;
+    if (coordinator != nil) {
+        _managedObjectContext = [NSManagedObjectContext new];
+        [_managedObjectContext setPersistentStoreCoordinator: coordinator];
     }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     return _managedObjectContext;
+}
+
+/**
+ Returns the managed object model for the application.
+ If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
+ */
+- (NSManagedObjectModel *)managedObjectModel {
+    
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    return _managedObjectModel;
 }
 
 #pragma mark - Core Data Saving support

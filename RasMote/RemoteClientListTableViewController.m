@@ -7,10 +7,16 @@
 //
 
 #import "RemoteClientListTableViewController.h"
+#import "RemoteAddClientViewController.h"
+#import "Client.h"
+#import "RemoteClientTableViewCell.h"
 
 @interface RemoteClientListTableViewController ()
-
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 @end
+
+// segue ID when "+" button is tapped
+static NSString *kShowClientSegueID = @"showClient";
 
 @implementation RemoteClientListTableViewController
 
@@ -29,30 +35,57 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark - Recipe support
+
+-(void) remoteClientAddViewController:(RemoteAddClientViewController *)remoteClientAddViewController didAddClient:(Client *)client
+{
+    if (client)
+    {
+        [self performSegueWithIdentifier:kShowClientSegueID sender:client];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    NSInteger count = [self.fetchedResultsController sections].count;
+    
+    if (count == 0) {
+        count = 1;
+    }
+    
+    return count;
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    NSInteger numberOfRows = 0;
+    
+    if ([self.fetchedResultsController sections].count > 0) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+        numberOfRows = [sectionInfo numberOfObjects];
+    }
+    
+    return numberOfRows;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    // dequeue a RecipeTableViewCell, then set its recipe to the recipe for the current row
+    RemoteClientTableViewCell *clientCell =
+    (RemoteClientTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MyIdentifier" forIndexPath:indexPath];
+    [self configureCell:clientCell atIndexPath:indexPath];
     
-    return cell;
+    return clientCell;
 }
-*/
-
+- (void)configureCell:(RemoteClientTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
+    Client *client = (Client *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.client = client;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -299,6 +299,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Clients" id="5x1-6a-nDP">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="IUV-06-Bhm"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6ep-US-kha">
                             <connections>
                                 <segue destination="d4a-j2-pCZ" kind="modal" id="fzo-cL-D4i"/>
@@ -360,7 +361,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="zwD-7N-SbF" id="dl8-DD-WfH"/>
+                                    <outlet property="delegate" destination="zwD-7N-SbF" id="gSt-91-wIc"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -391,10 +392,10 @@
             </objects>
             <point key="canvasLocation" x="1486.5" y="-1069.5"/>
         </scene>
-        <!--Remote Flipside View Controller-->
+        <!--Remote Client Detail View Controller-->
         <scene sceneID="z9J-Vg-hzE">
             <objects>
-                <viewController id="kIf-nA-PKG" customClass="RemoteFlipsideViewController" sceneMemberID="viewController">
+                <viewController id="kIf-nA-PKG" customClass="RemoteClientDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rBX-Xh-dAM"/>
                         <viewControllerLayoutGuide type="bottom" id="mPd-kI-uoc"/>

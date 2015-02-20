@@ -7,7 +7,7 @@
 //
 
 #import "RemoteMainViewController.h"
-#import "RemoteFlipsideViewController.h"
+#import "RemoteClientListTableViewController.h"
 
 @interface RemoteMainViewController ()
 
@@ -242,7 +242,7 @@ NSMutableData *dataObj;
 
 #pragma mark - Flipside View
 
-- (void)flipsideViewControllerDidFinish:(RemoteFlipsideViewController *)controller
+- (void)flipsideViewControllerDidFinish:(RemoteClientListTableViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
     _flipController = controller;
@@ -252,7 +252,7 @@ NSMutableData *dataObj;
 {
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         
-        RemoteFlipsideViewController *flipC = (RemoteFlipsideViewController *)[segue destinationViewController];
+        RemoteClientListTableViewController *flipC = (RemoteClientListTableViewController *)[segue destinationViewController];
         [flipC setDelegate:self];
 
     }

@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Joe Sturzenegger. All rights reserved.
 //
 
-#import "RemoteFlipsideViewController.h"
+#import "RemoteClientListTableViewController.h"
 
-@interface RemoteMainViewController : UIViewController <RemoteFlipsideViewControllerDelegate>
+@interface RemoteMainViewController : UIViewController <RemoteClientListTableViewControllerDelegate>
 
-@property(strong, nonatomic) RemoteFlipsideViewController *flipController;
+@property(strong, nonatomic) RemoteClientListTableViewController *flipController;
 @property(weak, nonatomic) IBOutlet UILabel *volumeLevel;
 @property(weak, nonatomic) RemoteMainViewController *delegate;
 @property(weak, nonatomic) NSUserDefaults *defaultSettings;
