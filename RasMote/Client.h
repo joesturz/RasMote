@@ -13,14 +13,14 @@
 
 @interface Client : NSManagedObject
 
-@property (nonatomic, retain) NSString * clientName;
-@property (nonatomic, retain) Credentials *credentials;
+@property (nonatomic, strong) NSString * clientName;
+@property (nonatomic, strong) Credentials *credentials;
 
 @end
 
-//@interface Client (CoreDataGeneratedAccessors)
-//
-//-(void)addCredentialsObject:(NSManagedObject *)value;
-//-(void)removeCredentialsObject:(NSManagedObject *)value;
-//
-//@end
+@interface Client (CoreDataGeneratedAccessors)
+
+-(void)addCredentialsObject:(NSManagedObject *)value;
+-(void)removeCredentialsObject:(NSManagedObject *)value;
+
+@end

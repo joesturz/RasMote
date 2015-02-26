@@ -21,7 +21,8 @@
 @interface RemoteClientListTableViewController : UITableViewController <ClientAddDelegate,
     NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (weak, nonatomic) id <RemoteClientListTableViewControllerDelegate> delegate;
 
 @end

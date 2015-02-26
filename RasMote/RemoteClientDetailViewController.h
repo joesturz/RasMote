@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Client.h"
+#import "Credentials.h"
 
 @class RemoteClientDetailViewController;
 
@@ -19,6 +21,9 @@
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField;
 -(IBAction) clickBackgound;
+
+@property Client *client;
+@property Credentials *credentials;
 
 @property (weak, nonatomic) id <RemoteClientDetailViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *clientAddressField;

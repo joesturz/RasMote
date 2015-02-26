@@ -12,6 +12,10 @@
 
 @interface RemoteAppDelegate ()
 
+@property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
 @end
 
 @implementation RemoteAppDelegate
@@ -19,11 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-//    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-//    UINavigationController *navController = tabBarController.viewControllers[0];
-//    
-//    RemoteClientListTableViewController *clientListVC = (RemoteClientListTableViewController *)navController.topViewController;
-//    clientListVC.managedObjectContext = self.managedObjectContext;
+    
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    RemoteMainViewController *clientListVC = (RemoteMainViewController *)navigationController.delegate;
+    clientListVC.managedObjectContext = self.managedObjectContext;
     
     return YES;
 }

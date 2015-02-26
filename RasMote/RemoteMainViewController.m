@@ -253,6 +253,7 @@ NSMutableData *dataObj;
     if ([[segue identifier] isEqualToString:@"showAlternate"]) {
         
         RemoteClientListTableViewController *flipC = (RemoteClientListTableViewController *)[segue destinationViewController];
+        flipC.managedObjectContext = self.managedObjectContext;
         [flipC setDelegate:self];
 
     }

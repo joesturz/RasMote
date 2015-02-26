@@ -21,6 +21,7 @@
 @property(nonatomic, retain) NSTimer *timer;
 @property (nonatomic) NSInteger upDownCounter;
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 -(IBAction)buttonTapped:(id)sender;
 -(IBAction)stepperValueChanged:(id)sender;

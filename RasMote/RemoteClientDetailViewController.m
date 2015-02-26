@@ -7,6 +7,7 @@
 //
 
 #import "RemoteClientDetailViewController.h"
+#import "EditingTableViewCell.h"
 
 @interface RemoteClientDetailViewController ()
 
@@ -147,5 +148,7 @@
 {
     [self.delegate flipsideViewControllerDidFinish:self];
 }
+
+
 
 @end
