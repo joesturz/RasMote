@@ -250,7 +250,7 @@ NSMutableData *dataObj;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
+    if ([[segue identifier] isEqualToString:@"showTableView"]) {
         
         RemoteClientListTableViewController *flipC = (RemoteClientListTableViewController *)[segue destinationViewController];
         flipC.managedObjectContext = self.managedObjectContext;
