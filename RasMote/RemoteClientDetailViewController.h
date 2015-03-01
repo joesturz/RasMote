@@ -22,8 +22,8 @@
 -(BOOL) textFieldShouldReturn:(UITextField *)textField;
 -(IBAction) clickBackgound;
 
-@property Client *client;
-@property Credentials *credentials;
+@property(nonatomic, strong) Client *client;
+@property(nonatomic, strong) Credentials *credentials;
 
 @property (weak, nonatomic) id <RemoteClientDetailViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *clientAddressField;

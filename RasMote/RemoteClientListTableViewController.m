@@ -20,6 +20,7 @@
 
 // segue ID when "+" button is tapped
 static NSString *kShowClientSegueID = @"showClient";
+static NSString *kAddClientSegueID = @"addClient";
 
 @implementation RemoteClientListTableViewController
 
@@ -27,7 +28,7 @@ static NSString *kShowClientSegueID = @"showClient";
     [super viewDidLoad];
     
     // add the table's edit button to the left side of the nav bar
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     // Set the table view's row height
     self.tableView.rowHeight = 44.0;
     
@@ -89,7 +90,7 @@ static NSString *kShowClientSegueID = @"showClient";
     
     // dequeue a RecipeTableViewCell, then set its recipe to the recipe for the current row
     RemoteClientTableViewCell *clientCell =
-    (RemoteClientTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"MyIdentifier" forIndexPath:indexPath];
+    (RemoteClientTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"clientCellID" forIndexPath:indexPath];
     [self configureCell:clientCell atIndexPath:indexPath];
     
     return clientCell;
@@ -174,6 +175,11 @@ static NSString *kShowClientSegueID = @"showClient";
     }
 }
 
+- (IBAction)done:(id)sender {
+    
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     
     // The fetch controller has sent all current change notifications,
@@ -221,37 +227,37 @@ static NSString *kShowClientSegueID = @"showClient";
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- 
- if ([segue.identifier isEqualToString:kShowClientSegueID]) {
- // show a recipe
- //
- RemoteClientDetailViewController *detailViewController = (RemoteClientDetailViewController *)segue.destinationViewController;
- 
- Client *client = nil;
- if ([sender isKindOfClass:[Client class]]) {
- // the sender is the actual recipe send from "didAddRecipe" delegate (user created a new recipe)
- client = (Client *)sender;
- }
- else {
- // the sender is ourselves (user tapped an existing recipe)
- NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
- client = (Client *)[self.fetchedResultsController objectAtIndexPath:indexPath];
- }
- detailViewController.client = client;
- }
- else if ([segue.identifier isEqualToString:kShowClientSegueID]) {
- // add a recipe
- //
- Client *newClient = [NSEntityDescription insertNewObjectForEntityForName:@"Client"
- inManagedObjectContext:self.managedObjectContext];
- 
- UINavigationController *navController = segue.destinationViewController;
- RemoteAddClientViewController *addController = (RemoteAddClientViewController *)navController.topViewController;
- addController.delegate = self;  // do didAddRecipe delegate method is called when cancel or save are tapped
- addController.client = newClient;
- }
- }
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:kShowClientSegueID]) {
+        // show a recipe
+        //
+        RemoteClientDetailViewController *detailController = (RemoteClientDetailViewController *)segue.destinationViewController;
+        
+        Client *client = nil;
+        if ([sender isKindOfClass:[Client class]]) {
+            // the sender is the actual recipe send from "didAddRecipe" delegate (user created a new recipe)
+            client = (Client *)sender;
+        }
+        else {
+            // the sender is ourselves (user tapped an existing recipe)
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            client = (Client *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+        }
+        detailController.client = client;
+    }
+    if ([[segue identifier] isEqualToString:kAddClientSegueID]) {
+        // add a recipe
+        //
+        Client *newClient = [NSEntityDescription insertNewObjectForEntityForName:@"Client"
+                                                          inManagedObjectContext:self.managedObjectContext];
+        
+        UINavigationController *navController = segue.destinationViewController;
+        RemoteAddClientViewController *addController = (RemoteAddClientViewController *)navController.topViewController;
+        addController.delegate = self;  // do didAddClient delegate method is called when cancel or save are tapped
+        addController.client = newClient;
+    }
+}
 
 
 @end

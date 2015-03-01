@@ -24,9 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    RemoteMainViewController *clientListVC = (RemoteMainViewController *)navigationController.delegate;
-    clientListVC.managedObjectContext = self.managedObjectContext;
+    RemoteMainViewController *mainView = (RemoteMainViewController *)self.window.rootViewController;;
+    mainView.managedObjectContext = self.managedObjectContext;
     
     return YES;
 }

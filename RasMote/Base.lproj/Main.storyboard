@@ -283,13 +283,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="0Sc-HZ-CQm">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clientCellID" id="0Sc-HZ-CQm" customClass="RemoteClientTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Sc-HZ-CQm" id="Jtv-Sg-87K">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kIf-nA-PKG" kind="push" id="asd-K4-Xwc"/>
+                                    <segue destination="kIf-nA-PKG" kind="push" identifier="showClient" id="asd-K4-Xwc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -299,10 +299,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Clients" id="5x1-6a-nDP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="IUV-06-Bhm"/>
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="IUV-06-Bhm">
+                            <connections>
+                                <action selector="done:" destination="DTx-FN-YC4" id="mMO-8j-XdB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6ep-US-kha">
                             <connections>
-                                <segue destination="d4a-j2-pCZ" kind="modal" id="fzo-cL-D4i"/>
+                                <segue destination="d4a-j2-pCZ" kind="modal" identifier="addClient" id="fzo-cL-D4i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -392,7 +396,7 @@
             </objects>
             <point key="canvasLocation" x="1486.5" y="-1069.5"/>
         </scene>
-        <!--Remote Client Detail View Controller-->
+        <!--Client Credentials:-->
         <scene sceneID="z9J-Vg-hzE">
             <objects>
                 <viewController id="kIf-nA-PKG" customClass="RemoteClientDetailViewController" sceneMemberID="viewController">
@@ -404,23 +408,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hED-2o-FLw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="tintColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Network Info" id="caU-JJ-JLf">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="WuG-Ps-ZbD">
-                                            <connections>
-                                                <action selector="done:" destination="kIf-nA-PKG" id="j28-pm-V55"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.1.16" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-MO-V5o">
                                 <rect key="frame" x="182" y="145" width="136" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -463,8 +450,7 @@
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Setup Info:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0n-MJ-gD7">
-                                <rect key="frame" x="145" y="64" width="84" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0n-MJ-gD7">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -476,17 +462,21 @@
                             <constraint firstAttribute="centerX" secondItem="qsJ-up-3UN" secondAttribute="centerX" constant="34.5" id="AvB-A3-lhZ"/>
                             <constraint firstAttribute="centerX" secondItem="zuI-w1-Lt1" secondAttribute="centerX" constant="69.5" id="Hbn-xT-eFL"/>
                             <constraint firstItem="h3x-jT-Ynv" firstAttribute="leading" secondItem="qsJ-up-3UN" secondAttribute="trailing" constant="8" id="QnJ-Dq-dGw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hED-2o-FLw" secondAttribute="trailing" constant="-16" id="RQy-Lx-zKK"/>
                             <constraint firstItem="xe9-MO-V5o" firstAttribute="leading" secondItem="zuI-w1-Lt1" secondAttribute="trailing" constant="8" id="SEE-Sn-ObC"/>
                             <constraint firstItem="F6o-eL-85H" firstAttribute="leading" secondItem="89j-uu-QAX" secondAttribute="trailing" constant="7" id="VJO-DB-tIV"/>
-                            <constraint firstItem="hED-2o-FLw" firstAttribute="leading" secondItem="tg4-aq-CMy" secondAttribute="leadingMargin" constant="-16" id="bOR-bb-0q2"/>
                             <constraint firstAttribute="centerX" secondItem="F0n-MJ-gD7" secondAttribute="centerX" id="hoP-Vh-dnD"/>
                         </constraints>
                         <connections>
                             <action selector="clickBackgound" destination="kIf-nA-PKG" eventType="touchUpInside" id="yWq-Qn-ddr"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="ykg-p8-eR6"/>
+                    <navigationItem key="navigationItem" title="Client Credentials:" id="K3n-gp-3F0">
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="flA-qB-rA2">
+                            <connections>
+                                <action selector="save:" destination="kIf-nA-PKG" id="fxJ-16-5Yj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="clientAddressField" destination="xe9-MO-V5o" id="lFf-01-cq9"/>
                         <outlet property="portField" destination="h3x-jT-Ynv" id="0hh-EJ-RYi"/>

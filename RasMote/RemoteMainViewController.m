@@ -252,9 +252,11 @@ NSMutableData *dataObj;
 {
     if ([[segue identifier] isEqualToString:@"showTableView"]) {
         
-        RemoteClientListTableViewController *flipC = (RemoteClientListTableViewController *)[segue destinationViewController];
-        flipC.managedObjectContext = self.managedObjectContext;
-        [flipC setDelegate:self];
+        UINavigationController *navController = (UINavigationController *)[segue destinationViewController];
+        RemoteClientListTableViewController *tableView =  (RemoteClientListTableViewController *)[navController topViewController];
+        
+        tableView.managedObjectContext = self.managedObjectContext;
+        [tableView setDelegate:self];
 
     }
 }
