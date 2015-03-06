@@ -26,7 +26,6 @@
 		D84EC35D196393FF00FC36DF /* RasMoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D84EC35C196393FF00FC36DF /* RasMoteTests.m */; };
 		D89184241A96F29A0076F846 /* RemoteClientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D89184231A96F29A0076F846 /* RemoteClientTableViewCell.m */; };
 		D8AAFAF71A9444030072BC62 /* RemoteClientListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */; };
-		D8AAFAFA1A9446630072BC62 /* RemoteAddClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */; };
 		D8AAFB091A9451300072BC62 /* RasMote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8AAFB071A9451300072BC62 /* RasMote.xcdatamodeld */; };
 		D8D7F9C51A8DAE4F001A84D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */; };
 /* End PBXBuildFile section */
@@ -71,8 +70,6 @@
 		D89184231A96F29A0076F846 /* RemoteClientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RemoteClientTableViewCell.m; path = RasMote/RemoteClientTableViewCell.m; sourceTree = "<group>"; };
 		D8AAFAF51A9444030072BC62 /* RemoteClientListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteClientListTableViewController.h; sourceTree = "<group>"; };
 		D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteClientListTableViewController.m; sourceTree = "<group>"; };
-		D8AAFAF81A9446630072BC62 /* RemoteAddClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteAddClientViewController.h; sourceTree = "<group>"; };
-		D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteAddClientViewController.m; sourceTree = "<group>"; };
 		D8AAFB081A9451300072BC62 /* RasMote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RasMote.xcdatamodel; sourceTree = "<group>"; };
 		D8AAFB101A945E190072BC62 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D8D7F9C41A8DAE4F001A84D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -198,8 +195,6 @@
 				D84EC347196393FF00FC36DF /* RemoteClientDetailViewController.m */,
 				D8AAFAF51A9444030072BC62 /* RemoteClientListTableViewController.h */,
 				D8AAFAF61A9444030072BC62 /* RemoteClientListTableViewController.m */,
-				D8AAFAF81A9446630072BC62 /* RemoteAddClientViewController.h */,
-				D8AAFAF91A9446630072BC62 /* RemoteAddClientViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -327,7 +322,6 @@
 				D89184241A96F29A0076F846 /* RemoteClientTableViewCell.m in Sources */,
 				D8AAFB091A9451300072BC62 /* RasMote.xcdatamodeld in Sources */,
 				D84EC348196393FF00FC36DF /* RemoteClientDetailViewController.m in Sources */,
-				D8AAFAFA1A9446630072BC62 /* RemoteAddClientViewController.m in Sources */,
 				D8216A261AAA467B00CC9164 /* Credentials.m in Sources */,
 				D8AAFAF71A9444030072BC62 /* RemoteClientListTableViewController.m in Sources */,
 				D829CA8B1A9EDD2D00FF3F5A /* EditingTableViewCell.m in Sources */,
