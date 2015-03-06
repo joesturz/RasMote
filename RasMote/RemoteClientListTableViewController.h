@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RemoteAddClientViewController.h"
-#import "Client.h"
+#import "RemoteClientDetailViewController.h"
 
 @class RemoteClientListTableViewController;
 
@@ -18,7 +17,7 @@
 @end
 
 
-@interface RemoteClientListTableViewController : UITableViewController <ClientAddDelegate,
+@interface RemoteClientListTableViewController : UITableViewController <CredentialsAddDelegate,
     NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Client.h"
+#import "Credentials.h"
 
 @interface RemoteClientTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) Client *client;
+@property (nonatomic, strong) Credentials *credentials;
 
 @end

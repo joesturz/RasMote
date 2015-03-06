@@ -10,7 +10,6 @@
 #import "RemoteClientDetailViewController.h"
 #import "RemoteAddClientViewController.h"
 #import "RemoteAppDelegate.h"
-#import "Client.h"
 #import "RemoteClientTableViewCell.h"
 
 
@@ -19,8 +18,8 @@
 @end
 
 // segue ID when "+" button is tapped
-static NSString *kShowClientSegueID = @"showClient";
-static NSString *kAddClientSegueID = @"addClient";
+static NSString *kShowClientSegueID = @"showCredentials";
+static NSString *kAddClientSegueID = @"addCredentials";
 
 @implementation RemoteClientListTableViewController
 
@@ -90,7 +89,7 @@ static NSString *kAddClientSegueID = @"addClient";
     
     // dequeue a RecipeTableViewCell, then set its recipe to the recipe for the current row
     RemoteClientTableViewCell *clientCell =
-    (RemoteClientTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"clientCellID" forIndexPath:indexPath];
+    (RemoteClientTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"credentialsCellID" forIndexPath:indexPath];
     [self configureCell:clientCell atIndexPath:indexPath];
     
     return clientCell;
@@ -98,8 +97,8 @@ static NSString *kAddClientSegueID = @"addClient";
 
 - (void)configureCell:(RemoteClientTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    Client *client = (Client *)[self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.client = client;
+    Credentials *credentials = (Credentials *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.credentials = credentials;
 }
 #pragma mark - Fetched results controller
 
@@ -110,7 +109,7 @@ static NSString *kAddClientSegueID = @"addClient";
         // Create the fetch request for the entity.
         NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
         // Edit the entity name as appropriate.
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Client" inManagedObjectContext:self.managedObjectContext];
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Credentials" inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
         
         // Edit the sort key as appropriate.
@@ -236,28 +235,28 @@ static NSString *kAddClientSegueID = @"addClient";
         //
         RemoteClientDetailViewController *detailController = (RemoteClientDetailViewController *)segue.destinationViewController;
         
-        Client *client = nil;
-        if ([sender isKindOfClass:[Client class]]) {
+        Credentials *credentials = nil;
+        if ([sender isKindOfClass:[Credentials class]]) {
             // the sender is the actual recipe send from "didAddRecipe" delegate (user created a new recipe)
-            client = (Client *)sender;
+            credentials = (Credentials *)sender;
         }
         else {
             // the sender is ourselves (user tapped an existing recipe)
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-            client = (Client *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+            credentials = (Credentials *)[self.fetchedResultsController objectAtIndexPath:indexPath];
         }
-        detailController.client = client;
+        detailController.credentials = credentials;
     }
     if ([[segue identifier] isEqualToString:kAddClientSegueID]) {
         // add a recipe
         //
-        Client *newClient = [NSEntityDescription insertNewObjectForEntityForName:@"Client"
+        Credentials *credentials = [NSEntityDescription insertNewObjectForEntityForName:@"Credentials"
                                                           inManagedObjectContext:self.managedObjectContext];
         
         UINavigationController *navController = segue.destinationViewController;
-        RemoteAddClientViewController *addController = (RemoteAddClientViewController *)navController.topViewController;
-        addController.delegate = self;  // do didAddClient delegate method is called when cancel or save are tapped
-        addController.client = newClient;
+        RemoteClientDetailViewController *detailsController = (RemoteClientDetailViewController *)navController.topViewController;
+        detailsController.delegate = self;  // do didAddClient delegate method is called when cancel or save are tapped
+        detailsController.credentials = credentials;
     }
 }
 

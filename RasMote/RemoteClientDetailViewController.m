@@ -150,38 +150,38 @@
 }
 - (IBAction)save:(id)sender {
     
-    NSManagedObjectContext *context = [self.client managedObjectContext];
-    
-    // if there isn't an ingredient object, create and configure one
-    if (!self.credentials) {
-        self.credentials = [NSEntityDescription insertNewObjectForEntityForName:@"Credentials"
-                                                        inManagedObjectContext:context];
-        //[self.client addCredentialsObject:self.credentials];
-    }
-    
-    // update the ingredient from the values in the text fields
-    
-
-    self.credentials.serverAddress = self.serverAddressField.text;
-    self.credentials.clientAddress = self.clientAddressField.text;
-    self.credentials.port = self.portField.text;
-    
-    [self.client addCredentialsObject:self.credentials];
-    
-    // save the managed object context
-    NSError *error = nil;
-    if (![context save:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate.
-         You should not use this function in a shipping application, although it may be
-         useful during development. If it is not possible to recover from the error, display
-         an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
+//    NSManagedObjectContext *context = [self.client managedObjectContext];
+//    
+//    // if there isn't an ingredient object, create and configure one
+//    if (!self.credentials) {
+//        self.credentials = [NSEntityDescription insertNewObjectForEntityForName:@"Credentials"
+//                                                        inManagedObjectContext:context];
+//        //[self.client addCredentialsObject:self.credentials];
+//    }
+//    
+//    // update the ingredient from the values in the text fields
+//    
+//
+//    self.credentials.serverAddress = self.serverAddressField.text;
+//    self.credentials.clientAddress = self.clientAddressField.text;
+//    self.credentials.port = self.portField.text;
+//    
+//    [self.client addCredentialsObject:self.credentials];
+//    
+//    // save the managed object context
+//    NSError *error = nil;
+//    if (![context save:&error]) {
+//        /*
+//         Replace this implementation with code to handle the error appropriately.
+//         
+//         abort() causes the application to generate a crash log and terminate.
+//         You should not use this function in a shipping application, although it may be
+//         useful during development. If it is not possible to recover from the error, display
+//         an alert panel that instructs the user to quit the application by pressing the Home button.
+//         */
+//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+//        abort();
+//    }
     
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }

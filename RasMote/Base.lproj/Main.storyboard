@@ -283,13 +283,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clientCellID" id="0Sc-HZ-CQm" customClass="RemoteClientTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="credentialsCellID" id="0Sc-HZ-CQm" customClass="RemoteClientTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Sc-HZ-CQm" id="Jtv-Sg-87K">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kIf-nA-PKG" kind="push" identifier="showClient" id="asd-K4-Xwc"/>
+                                    <segue destination="kIf-nA-PKG" kind="push" identifier="showCredentials" id="4zQ-ti-Ef6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -306,7 +306,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6ep-US-kha">
                             <connections>
-                                <segue destination="d4a-j2-pCZ" kind="modal" identifier="addClient" id="fzo-cL-D4i"/>
+                                <segue destination="d4a-j2-pCZ" kind="modal" identifier="addCredentials" id="VNa-Ul-f9l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -341,60 +341,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="zwD-7N-SbF" kind="relationship" relationship="rootViewController" id="iKf-uF-UPF"/>
+                        <segue destination="kIf-nA-PKG" kind="relationship" relationship="rootViewController" id="feV-8q-DY6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBa-Uw-dIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945.5" y="-1069.5"/>
-        </scene>
-        <!--RemoteAddClientViewController-->
-        <scene sceneID="SYt-my-DnZ">
-            <objects>
-                <viewController storyboardIdentifier="RemoteAddClientViewController" id="zwD-7N-SbF" userLabel="RemoteAddClientViewController" customClass="RemoteAddClientViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sfX-51-jZa"/>
-                        <viewControllerLayoutGuide type="bottom" id="NtQ-he-Jes"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2PM-Wp-fWE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u6i-67-nOd">
-                                <rect key="frame" x="58" y="107" width="258" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="zwD-7N-SbF" id="gSt-91-wIc"/>
-                                </connections>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="u6i-67-nOd" firstAttribute="leading" secondItem="2PM-Wp-fWE" secondAttribute="leadingMargin" constant="42" id="7dX-9I-fA6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u6i-67-nOd" secondAttribute="trailing" constant="43" id="8Cd-Aw-4lK"/>
-                            <constraint firstItem="u6i-67-nOd" firstAttribute="top" secondItem="sfX-51-jZa" secondAttribute="bottom" constant="43" id="phM-0T-wnX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Client" id="t7L-AL-JZv">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ERS-K3-5s9">
-                            <connections>
-                                <action selector="cancel:" destination="zwD-7N-SbF" id="rbh-S4-YBo"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Dwf-Is-F0W">
-                            <connections>
-                                <action selector="save:" destination="zwD-7N-SbF" id="WMX-n4-Agi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="nameTextField" destination="u6i-67-nOd" id="hE2-ll-bVF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ybj-hG-kCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1486.5" y="-1069.5"/>
+            <point key="canvasLocation" x="1000.5" y="-703.5"/>
         </scene>
         <!--Client Credentials:-->
         <scene sceneID="z9J-Vg-hzE">
@@ -409,7 +361,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.1.16" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-MO-V5o">
-                                <rect key="frame" x="182" y="145" width="136" height="30"/>
+                                <rect key="frame" x="182" y="179" width="136" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
                                 <connections>
@@ -417,13 +369,13 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Plex Client IP :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuI-w1-Lt1">
-                                <rect key="frame" x="62" y="149" width="112" height="21"/>
+                                <rect key="frame" x="62" y="183" width="112" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="32400" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-jT-Ynv">
-                                <rect key="frame" x="182" y="183" width="77" height="30"/>
+                                <rect key="frame" x="182" y="217" width="77" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
                                 <connections>
@@ -431,7 +383,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="192.168.1.16" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F6o-eL-85H">
-                                <rect key="frame" x="182" y="111" width="136" height="30"/>
+                                <rect key="frame" x="182" y="145" width="136" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
                                 <connections>
@@ -439,18 +391,32 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Plex Server IP :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89j-uu-QAX">
-                                <rect key="frame" x="57" y="115" width="118" height="21"/>
+                                <rect key="frame" x="57" y="149" width="118" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Client Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-Ki-N2W">
+                                <rect key="frame" x="182" y="111" width="136" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kIf-nA-PKG" id="cPP-M2-rTw"/>
+                                </connections>
+                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Port :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsJ-up-3UN">
-                                <rect key="frame" x="132" y="187" width="42" height="21"/>
+                                <rect key="frame" x="132" y="221" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0n-MJ-gD7">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Client Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qch-Z8-0UC">
+                                <rect key="frame" x="70" y="115" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -461,6 +427,7 @@
                             <constraint firstAttribute="centerX" secondItem="89j-uu-QAX" secondAttribute="centerX" constant="71.5" id="6Io-G4-Jwg"/>
                             <constraint firstAttribute="centerX" secondItem="qsJ-up-3UN" secondAttribute="centerX" constant="34.5" id="AvB-A3-lhZ"/>
                             <constraint firstAttribute="centerX" secondItem="zuI-w1-Lt1" secondAttribute="centerX" constant="69.5" id="Hbn-xT-eFL"/>
+                            <constraint firstItem="8sa-Ki-N2W" firstAttribute="leading" secondItem="qch-Z8-0UC" secondAttribute="trailing" constant="7" id="Hrt-6Q-Aud"/>
                             <constraint firstItem="h3x-jT-Ynv" firstAttribute="leading" secondItem="qsJ-up-3UN" secondAttribute="trailing" constant="8" id="QnJ-Dq-dGw"/>
                             <constraint firstItem="xe9-MO-V5o" firstAttribute="leading" secondItem="zuI-w1-Lt1" secondAttribute="trailing" constant="8" id="SEE-Sn-ObC"/>
                             <constraint firstItem="F6o-eL-85H" firstAttribute="leading" secondItem="89j-uu-QAX" secondAttribute="trailing" constant="7" id="VJO-DB-tIV"/>
@@ -479,13 +446,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="clientAddressField" destination="xe9-MO-V5o" id="lFf-01-cq9"/>
+                        <outlet property="clientNameField" destination="8sa-Ki-N2W" id="0C6-VU-yHB"/>
                         <outlet property="portField" destination="h3x-jT-Ynv" id="0hh-EJ-RYi"/>
                         <outlet property="serverAddressField" destination="F6o-eL-85H" id="EOe-JK-9DD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlJ-1o-FvB" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036.5" y="-282.5"/>
+            <point key="canvasLocation" x="1000.5" y="137.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -493,4 +461,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina47"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="4zQ-ti-Ef6"/>
+    </inferredMetricsTieBreakers>
 </document>

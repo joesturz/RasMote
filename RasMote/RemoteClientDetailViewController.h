@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Client.h"
 #import "Credentials.h"
 
 @class RemoteClientDetailViewController;
@@ -22,13 +21,13 @@
 -(BOOL) textFieldShouldReturn:(UITextField *)textField;
 -(IBAction) clickBackgound;
 
-@property(nonatomic, strong) Client *client;
 @property(nonatomic, strong) Credentials *credentials;
 
 @property (weak, nonatomic) id <RemoteClientDetailViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *clientAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *serverAddressField;
 @property (weak, nonatomic) IBOutlet UITextField *portField;
+@property (weak, nonatomic) IBOutlet UITextField *clientNameField;
 
 @property(nonatomic) NSString *clientAddress;
 @property(nonatomic) NSString *serverAddress;
@@ -38,5 +37,13 @@
 
 -(void) setUpFlipSideServer:(NSString *) serverAdd Client:(NSString *)clientAdd Port:(NSString *) portNum;
 - (IBAction)done:(id)sender;
+
+
+
+@end
+
+@protocol CredentialsAddDelegate <NSObject>
+
+- (void)remoteClientDetailsViewController:(RemoteClientDetailViewController *)remoteClientDetailsViewController didAddCredentials:(Credentials *)credentials;
 
 @end

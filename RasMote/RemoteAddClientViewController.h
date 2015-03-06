@@ -22,6 +22,6 @@
 @protocol ClientAddDelegate <NSObject>
 
 // recipe == nil on cancel
-- (void)remoteClientAddViewController:(RemoteAddClientViewController *)remoteClientAddViewController didAddClient:(Client *)client;
+- (void)remoteClientDetailsViewController:(RemoteAddClientViewController *)remoteClientAddViewController didAddClient:(Client *)client;
 
 @end

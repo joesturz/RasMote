@@ -10,7 +10,7 @@
 
 @interface RemoteClientTableViewCell ()
 
-@property (nonatomic, strong) UILabel *clientNameLabel;
+@property (nonatomic, strong) UILabel *credentialsNameLabel;
 
 @end
 
@@ -20,11 +20,11 @@
     
     if (self = [super initWithCoder:aDecoder]) {
         
-        _clientNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        [self.clientNameLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
-        [self.clientNameLabel setTextColor:[UIColor blackColor]];
-        [self.clientNameLabel setHighlightedTextColor:[UIColor whiteColor]];
-        [self.contentView addSubview:self.clientNameLabel];
+        _credentialsNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [self.credentialsNameLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
+        [self.credentialsNameLabel setTextColor:[UIColor blackColor]];
+        [self.credentialsNameLabel setHighlightedTextColor:[UIColor whiteColor]];
+        [self.contentView addSubview:self.credentialsNameLabel];
     }
     
     return self;
@@ -35,7 +35,7 @@
     
     [super layoutSubviews];
     
-    [self.clientNameLabel setFrame:[self _nameLabelFrame]];
+    [self.credentialsNameLabel setFrame:[self _nameLabelFrame]];
 }
 
 
@@ -59,12 +59,12 @@
 
 #pragma mark - Recipe set accessor
 
-- (void)setRecipe:(Client *)newClient {
+- (void)setRecipe:(Credentials *)newCredentials {
     
-    if (newClient != _client) {
-        _client = newClient;
+    if (newCredentials != _credentials) {
+        _credentials = newCredentials;
     }
-    self.clientNameLabel.text = (_client.clientName.length > 0) ? _client.clientName : @"-";
+    self.credentialsNameLabel.text = (_credentials.clientName.length > 0) ? _credentials.clientName : @"-";
 }
 
 @end
