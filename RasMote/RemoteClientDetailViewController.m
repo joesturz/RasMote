@@ -7,6 +7,7 @@
 //
 
 #import "RemoteClientDetailViewController.h"
+#import "RemoteMainViewController.h"
 #import "EditingTableViewCell.h"
 
 @interface RemoteClientDetailViewController ()
@@ -35,6 +36,8 @@
     self.serverAddressField.delegate = self;
     self.portField.delegate = self;
     self.clientNameField.delegate = self;
+    
+    _defaultSettings = [NSUserDefaults standardUserDefaults];
 // Do any additional setup after loading the view, typically from a nib.
     
     
@@ -170,7 +173,7 @@
         [self setPort:portString];
         [self setServerAddress:serverString];
         [self setClientName:clientNameString];
-        NSLog(@"Got Client Name: %@, Server Address: %@, Client Address: %@ and Port: %@", serverString, addressString, portString, clientNameString);
+        NSLog(@"Got Client Name: %@, Server Address: %@, Client Address: %@ and Port: %@", clientNameString, serverString, addressString, portString);
     }
     else
     {
@@ -180,15 +183,18 @@
         [self setServerAddress:serverString];
         [self setClientName:clientNameString];
     }
+    [_defaultSettings stringForKey:@""];
+    
+    NSLog(@"%@ %@ %@ %@", [_defaultSettings stringForKey:@"ClientName"],[_defaultSettings stringForKey:@"PortNumber"],[_defaultSettings stringForKey:@"ServerAddress"],[_defaultSettings stringForKey:@"ClientAddress"]);
     return YES;
 }
 
 #pragma mark - Actions
 
-- (IBAction)done:(id)sender
-{
-    [self.delegate flipsideViewControllerDidFinish:self];
-}
+//- (IBAction)done:(id)sender
+//{
+//    [self.delegate flipsideViewControllerDidFinish:self];
+//}
 - (IBAction)save:(id)sender {
     
     NSManagedObjectContext *context = [self.credentials managedObjectContext];
@@ -226,8 +232,48 @@
     [self helperShouldReturn];
     //[self.delegate flipsideViewControllerDidFinish:self];
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    //[self.delegate remoteClientDetailsViewController:self didAddCredentials:self.credentials];
+    
 }
-
+-(IBAction)cancel:(id)sender
+{
+    NSString *name1, *port1, *server1, *client1;
+    name1 = self.credentials.clientName;
+    port1 = self.credentials.port;
+    server1 = self.credentials.serverAddress;
+    client1 = self.credentials.clientAddress;
+    
+    NSLog(@"%@ %@ %@ %@ ", name1, port1, server1, client1);
+    
+    if (([name1 isEqual:nil] || [name1 length] == 0)
+        && ([port1 isEqual:nil] || [port1 length] == 0)
+        && ([server1 isEqual:nil] || [server1 length] == 0)
+        && ([client1 isEqual:nil] || [client1 length] == 0))
+    {
+         [self.credentials.managedObjectContext deleteObject:self.credentials];
+        [self.delegate remoteClientDetailsViewController:self didAddCredentials:nil];
+    }
+   
+    
+    
+    NSError *error = nil;
+    if (![self.credentials.managedObjectContext save:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
+}
+-(IBAction)update:(UIStoryboardSegue *)segue
+{
+    
+}
 
 
 

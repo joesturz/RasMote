@@ -26,7 +26,8 @@
     _portNum = [_defaultSettings stringForKey:@"PortNumber"];
     _clientName = [_defaultSettings stringForKey:@"ClientName"];
     
-    if (![_clientName isEqual:nil])
+    //if (![_clientName isEqual:nil] && ![_clientName isEqualToString:@""])
+    if(_clientName)
     {
         self.clientNameLabel.text = _clientName;
     }
@@ -266,6 +267,7 @@ NSMutableData *dataObj;
 
     }
 }
+
 -(void)receivedData:(NSData*)data
 {
     NSString* newStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -285,5 +287,19 @@ NSMutableData *dataObj;
 -(void)downloadError:(NSError*) error
 {
     NSLog(@"Error");
+}
+-(IBAction)update:(UIStoryboardSegue *)segue
+{
+    NSLog(@"made it to update");
+    _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
+    _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
+    _portNum = [_defaultSettings stringForKey:@"PortNumber"];
+    _clientName = [_defaultSettings stringForKey:@"ClientName"];
+    
+    //if (![_clientName isEqual:nil] && ![_clientName isEqualToString:@""])
+    if(_clientName)
+    {
+        self.clientNameLabel.text = _clientName;
+    }
 }
 @end

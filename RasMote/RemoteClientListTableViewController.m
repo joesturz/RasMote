@@ -19,6 +19,7 @@
 // segue ID when "+" button is tapped
 static NSString *kShowClientSegueID = @"showCredentials";
 static NSString *kAddClientSegueID = @"addCredentials";
+static NSString *kShowTableView = @"showTableView";
 
 @implementation RemoteClientListTableViewController
 
@@ -54,7 +55,7 @@ static NSString *kAddClientSegueID = @"addCredentials";
 {
     if (credentials)
     {
-        [self performSegueWithIdentifier:kShowClientSegueID sender:credentials];
+        [self performSegueWithIdentifier:kShowTableView sender:credentials];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -29,7 +29,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nak-Po-ev0" kind="modal" identifier="showTableView" id="AMF-SY-9qx"/>
+                                    <segue destination="nak-Po-ev0" kind="modal" identifier="showTableView" modalTransitionStyle="flipHorizontal" id="AMF-SY-9qx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySO-Jv-CK9">
@@ -442,9 +442,15 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Client Credentials:" id="K3n-gp-3F0">
-                        <barButtonItem key="leftBarButtonItem" title="Set" id="flA-qB-rA2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wt2-Hz-yfz">
                             <connections>
-                                <action selector="save:" destination="kIf-nA-PKG" id="fxJ-16-5Yj"/>
+                                <action selector="cancel:" destination="kIf-nA-PKG" id="eT3-kD-9hP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tvV-zB-eW4">
+                            <connections>
+                                <action selector="save:" destination="kIf-nA-PKG" id="zfT-LM-gis"/>
+                                <segue destination="2e0-DA-dBx" kind="unwind" unwindAction="update:" id="thN-if-OcV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -456,6 +462,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlJ-1o-FvB" sceneMemberID="firstResponder"/>
+                <exit id="2e0-DA-dBx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1000.5" y="137.5"/>
         </scene>

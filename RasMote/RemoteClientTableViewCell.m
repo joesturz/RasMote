@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UILabel *credentialsNameLabel;
 
+- (CGRect) _nameLabelFrame;
+
 @end
 
 @implementation RemoteClientTableViewCell
