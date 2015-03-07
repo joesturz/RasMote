@@ -449,7 +449,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="tvV-zB-eW4">
                             <connections>
-                                <action selector="save:" destination="kIf-nA-PKG" id="zfT-LM-gis"/>
                                 <segue destination="2e0-DA-dBx" kind="unwind" unwindAction="update:" id="thN-if-OcV"/>
                             </connections>
                         </barButtonItem>

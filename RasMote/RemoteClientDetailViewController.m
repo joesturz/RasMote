@@ -251,7 +251,7 @@
         && ([server1 isEqual:nil] || [server1 length] == 0)
         && ([client1 isEqual:nil] || [client1 length] == 0))
     {
-         [self.credentials.managedObjectContext deleteObject:self.credentials];
+        [self.credentials.managedObjectContext deleteObject:self.credentials];
         [self.delegate remoteClientDetailsViewController:self didAddCredentials:nil];
     }
    
@@ -272,7 +272,10 @@
 }
 -(IBAction)update:(UIStoryboardSegue *)segue
 {
-    
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self save:nil];
 }
 
 
