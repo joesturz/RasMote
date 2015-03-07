@@ -18,6 +18,7 @@
     NSString *clientAddress;
     NSString *port;
     NSString *serverAddress;
+    NSString *clientName;
 }
 
 -(IBAction)clickBackgound
@@ -33,13 +34,19 @@
     self.clientAddressField.delegate = self;
     self.serverAddressField.delegate = self;
     self.portField.delegate = self;
+    self.clientNameField.delegate = self;
 // Do any additional setup after loading the view, typically from a nib.
     
     
-    _defaultSettings = [NSUserDefaults standardUserDefaults];
-    [self setClientAddress:[_defaultSettings stringForKey:@"ClientAddress"]];
-    [self setServerAddress:[_defaultSettings stringForKey:@"ServerAddress"]];
-    [self setPort:[_defaultSettings stringForKey:@"PortNumber"]];
+//    _defaultSettings = [NSUserDefaults standardUserDefaults];
+//    [self setClientAddress:[_defaultSettings stringForKey:@"ClientAddress"]];
+//    [self setServerAddress:[_defaultSettings stringForKey:@"ServerAddress"]];
+//    [self setPort:[_defaultSettings stringForKey:@"PortNumber"]];
+    
+    [self setClientAddress:self.credentials.clientAddress];
+    [self setServerAddress:self.credentials.serverAddress];
+    [self setPort:self.credentials.port];
+    [self setClientName:self.credentials.clientName];
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,11 +99,34 @@
     return serverAddress;
 
 }
+-(void)setClientName:(NSString *) add
+{
+    clientName = add;
+    [_clientNameField setText:add];
+    [_defaultSettings setObject:add forKey:@"ClientName"];
+}
+-(NSString*)clientName
+{
+    if ([clientName isEqual:nil] || [clientName length] == 0)
+    {
+        return @"Unset Client Name";
+    }
+    return clientName;
+    
+}
+
+
 -(void) setUpFlipSideServer:(NSString *) serverAdd Client:(NSString *)clientAdd Port:(NSString *) portNum
 {
-    self.portField.text = portNum;
-    self.clientAddressField.text = clientAdd;
-    self.serverAddressField.text = serverAdd;
+//    self.portField.text = portNum;
+//    self.clientAddressField.text = clientAdd;
+//    self.serverAddressField.text = serverAdd;
+    
+    self.portField.text = self.credentials.port;
+    self.clientAddressField.text = self.credentials.clientAddress;
+    self.serverAddressField.text = self.credentials.serverAddress;
+    self.clientNameField.text = self.credentials.clientName;
+    
 }
 //-(id)initWithPreferedSettings
 //{
@@ -116,28 +146,39 @@
 {
     return YES;
 }
+// called when route(return) button is pressed on keyboard
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+
+    return [self helperShouldReturn];
+}
+
+-(BOOL)helperShouldReturn
+{
     NSString *addressString = [_clientAddressField text];
     NSString *serverString = [_serverAddressField text];
     NSString *portString =[_portField text];
+    NSString *clientNameString = [_clientNameField text];
     
     if (([addressString isEqual:nil] || [addressString length] != 0)
         && ([portString isEqual:nil] || [portString length] != 0)
-        && ([serverString isEqual:nil] || [serverString length] != 0))
+        && ([serverString isEqual:nil] || [serverString length] != 0)
+        && ([clientNameString isEqual:nil] || [clientNameString length] != 0))
     {
         [self setClientAddress:addressString];
         [self setPort:portString];
         [self setServerAddress:serverString];
-        NSLog(@"Got Server Address: %@, Client Address: %@ and Port: %@", serverString, addressString, portString);
+        [self setClientName:clientNameString];
+        NSLog(@"Got Client Name: %@, Server Address: %@, Client Address: %@ and Port: %@", serverString, addressString, portString, clientNameString);
     }
     else
     {
-        NSLog(@"Client, Server or Port were not set!");
+        NSLog(@"Name, Client, Server or Port were not set!");
         [self setClientAddress:addressString];
         [self setPort:portString];
         [self setServerAddress:serverString];
+        [self setClientName:clientNameString];
     }
     return YES;
 }
@@ -150,39 +191,40 @@
 }
 - (IBAction)save:(id)sender {
     
-//    NSManagedObjectContext *context = [self.client managedObjectContext];
-//    
-//    // if there isn't an ingredient object, create and configure one
-//    if (!self.credentials) {
-//        self.credentials = [NSEntityDescription insertNewObjectForEntityForName:@"Credentials"
-//                                                        inManagedObjectContext:context];
-//        //[self.client addCredentialsObject:self.credentials];
-//    }
-//    
-//    // update the ingredient from the values in the text fields
-//    
-//
-//    self.credentials.serverAddress = self.serverAddressField.text;
-//    self.credentials.clientAddress = self.clientAddressField.text;
-//    self.credentials.port = self.portField.text;
-//    
-//    [self.client addCredentialsObject:self.credentials];
-//    
-//    // save the managed object context
-//    NSError *error = nil;
-//    if (![context save:&error]) {
-//        /*
-//         Replace this implementation with code to handle the error appropriately.
-//         
-//         abort() causes the application to generate a crash log and terminate.
-//         You should not use this function in a shipping application, although it may be
-//         useful during development. If it is not possible to recover from the error, display
-//         an alert panel that instructs the user to quit the application by pressing the Home button.
-//         */
-//        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-//        abort();
-//    }
+    NSManagedObjectContext *context = [self.credentials managedObjectContext];
     
+    // if there isn't an ingredient object, create and configure one
+    if (!self.credentials) {
+        self.credentials = [NSEntityDescription insertNewObjectForEntityForName:@"Credentials"
+                                                        inManagedObjectContext:context];
+        //[self.client addCredentialsObject:self.credentials];
+    }
+    
+    // update the ingredient from the values in the text fields
+    
+    self.credentials.clientName = self.clientNameField.text;
+    self.credentials.serverAddress = self.serverAddressField.text;
+    self.credentials.clientAddress = self.clientAddressField.text;
+    self.credentials.port = self.portField.text;
+    
+    //[self.credentials addCredentialsObject:self.credentials];
+    
+    // save the managed object context
+    NSError *error = nil;
+    if (![context save:&error]) {
+        /*
+         Replace this implementation with code to handle the error appropriately.
+         
+         abort() causes the application to generate a crash log and terminate.
+         You should not use this function in a shipping application, although it may be
+         useful during development. If it is not possible to recover from the error, display
+         an alert panel that instructs the user to quit the application by pressing the Home button.
+         */
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    [self helperShouldReturn];
+    //[self.delegate flipsideViewControllerDidFinish:self];
     [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

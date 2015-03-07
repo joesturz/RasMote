@@ -214,6 +214,12 @@
                                     <action selector="buttonTapped:" destination="rQl-PL-IFJ" eventType="touchUpInside" id="APe-sS-blI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Client Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-n2-FOe">
+                                <rect key="frame" x="16" y="49" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.20139110331632648" green="0.20139110331632648" blue="0.20139110331632648" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -242,10 +248,12 @@
                             <constraint firstAttribute="centerY" secondItem="O1d-g7-ezB" secondAttribute="centerY" constant="190" id="SFh-IR-SgQ"/>
                             <constraint firstItem="X0L-D6-whj" firstAttribute="leading" secondItem="ySO-Jv-CK9" secondAttribute="trailing" constant="13" id="TyA-1c-Ahu"/>
                             <constraint firstAttribute="centerY" secondItem="9oJ-j8-EUd" secondAttribute="centerY" constant="193" id="Ufp-nA-bcm"/>
+                            <constraint firstItem="Lfd-n2-FOe" firstAttribute="trailing" secondItem="l9E-07-oys" secondAttribute="trailingMargin" id="Ul4-A9-LbA"/>
                             <constraint firstAttribute="centerY" secondItem="S0x-VP-HP5" secondAttribute="centerY" constant="-73.5" id="VW9-4b-DEX"/>
                             <constraint firstItem="cLm-xC-DhB" firstAttribute="leading" secondItem="xta-o9-3tE" secondAttribute="trailing" constant="1" id="WU5-7n-zTB"/>
                             <constraint firstItem="S0x-VP-HP5" firstAttribute="top" secondItem="X0L-D6-whj" secondAttribute="bottom" constant="5" id="WlQ-zG-DFk"/>
                             <constraint firstAttribute="centerX" secondItem="ywt-pV-hFP" secondAttribute="centerX" id="YAJ-dl-FwH"/>
+                            <constraint firstItem="Lfd-n2-FOe" firstAttribute="top" secondItem="bfD-tQ-IfD" secondAttribute="bottom" constant="29" id="YGs-L8-FhF"/>
                             <constraint firstAttribute="centerY" secondItem="ySO-Jv-CK9" secondAttribute="centerY" constant="21.5" id="YJw-Ut-xp0"/>
                             <constraint firstItem="S0x-VP-HP5" firstAttribute="top" secondItem="X0L-D6-whj" secondAttribute="bottom" constant="5" id="cDU-lU-YFB"/>
                             <constraint firstItem="xta-o9-3tE" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leadingMargin" constant="4" id="cTu-9T-Yat"/>
@@ -259,6 +267,7 @@
                             <constraint firstItem="c4s-Xn-x5B" firstAttribute="top" secondItem="AkN-OI-ol6" secondAttribute="bottom" constant="115" id="piz-V6-pbc"/>
                             <constraint firstAttribute="centerX" secondItem="XH5-22-I7b" secondAttribute="centerX" constant="118.5" id="r3t-HY-adS"/>
                             <constraint firstAttribute="centerX" secondItem="9oJ-j8-EUd" secondAttribute="centerX" constant="-54" id="rZI-qe-acD"/>
+                            <constraint firstItem="Lfd-n2-FOe" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leadingMargin" id="rfL-E1-9WL"/>
                             <constraint firstItem="Apm-d8-W6U" firstAttribute="top" secondItem="xta-o9-3tE" secondAttribute="bottom" constant="12" id="t1d-bq-cXu"/>
                             <constraint firstItem="ySO-Jv-CK9" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leadingMargin" constant="10" id="twi-hY-JTO"/>
                             <constraint firstItem="AkN-OI-ol6" firstAttribute="top" secondItem="S0x-VP-HP5" secondAttribute="bottom" constant="5" id="uM0-6s-ybv"/>
@@ -267,6 +276,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clientNameLabel" destination="Lfd-n2-FOe" id="uQV-LI-4Ps"/>
                         <outlet property="volumeLevel" destination="cLm-xC-DhB" id="KLu-fo-Wf3"/>
                     </connections>
                 </viewController>
@@ -410,11 +420,6 @@
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0n-MJ-gD7">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Client Name :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qch-Z8-0UC">
                                 <rect key="frame" x="70" y="115" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -431,14 +436,13 @@
                             <constraint firstItem="h3x-jT-Ynv" firstAttribute="leading" secondItem="qsJ-up-3UN" secondAttribute="trailing" constant="8" id="QnJ-Dq-dGw"/>
                             <constraint firstItem="xe9-MO-V5o" firstAttribute="leading" secondItem="zuI-w1-Lt1" secondAttribute="trailing" constant="8" id="SEE-Sn-ObC"/>
                             <constraint firstItem="F6o-eL-85H" firstAttribute="leading" secondItem="89j-uu-QAX" secondAttribute="trailing" constant="7" id="VJO-DB-tIV"/>
-                            <constraint firstAttribute="centerX" secondItem="F0n-MJ-gD7" secondAttribute="centerX" id="hoP-Vh-dnD"/>
                         </constraints>
                         <connections>
                             <action selector="clickBackgound" destination="kIf-nA-PKG" eventType="touchUpInside" id="yWq-Qn-ddr"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Client Credentials:" id="K3n-gp-3F0">
-                        <barButtonItem key="leftBarButtonItem" title="Save" id="flA-qB-rA2">
+                        <barButtonItem key="leftBarButtonItem" title="Set" id="flA-qB-rA2">
                             <connections>
                                 <action selector="save:" destination="kIf-nA-PKG" id="fxJ-16-5Yj"/>
                             </connections>

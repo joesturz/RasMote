@@ -11,14 +11,20 @@
 @interface RemoteMainViewController : UIViewController <RemoteClientListTableViewControllerDelegate>
 
 @property(strong, nonatomic) RemoteClientListTableViewController *flipController;
-@property(weak, nonatomic) IBOutlet UILabel *volumeLevel;
 @property(weak, nonatomic) RemoteMainViewController *delegate;
+
+@property(weak, nonatomic) IBOutlet UILabel *volumeLevel;
+@property (weak, nonatomic) IBOutlet UILabel *clientNameLabel;
+
 @property(weak, nonatomic) NSUserDefaults *defaultSettings;
 
 @property(weak, nonatomic) NSString *serverIP;
 @property(weak, nonatomic) NSString *clientIP;
+@property(weak, nonatomic) NSString *clientName;
 @property(weak, nonatomic) NSString *portNum;
+
 @property(nonatomic, retain) NSTimer *timer;
+
 @property (nonatomic) NSInteger upDownCounter;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

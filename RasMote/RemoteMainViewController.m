@@ -24,6 +24,12 @@
     _serverIP = [_defaultSettings stringForKey:@"ClientAddress"];
     _clientIP = [_defaultSettings stringForKey:@"ServerAddress"];
     _portNum = [_defaultSettings stringForKey:@"PortNumber"];
+    _clientName = [_defaultSettings stringForKey:@"ClientName"];
+    
+    if (![_clientName isEqual:nil])
+    {
+        self.clientNameLabel.text = _clientName;
+    }
 	// Do any additional setup after loading the view, typically from a nib.
 
 }
