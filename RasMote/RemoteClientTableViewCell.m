@@ -23,9 +23,9 @@
     if (self = [super initWithCoder:aDecoder]) {
         
         _credentialsNameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        [self.credentialsNameLabel setFont:[UIFont boldSystemFontOfSize:14.0]];
-        [self.credentialsNameLabel setTextColor:[UIColor blackColor]];
-        [self.credentialsNameLabel setHighlightedTextColor:[UIColor whiteColor]];
+        [self.credentialsNameLabel setFont:[UIFont boldSystemFontOfSize:18.0]];
+        [self.credentialsNameLabel setTextColor:[UIColor colorWithRed:249.0/255.0f green:161.0/255.0f blue:5.0/255.0f alpha:1.0f]];
+        [self.credentialsNameLabel setHighlightedTextColor:[UIColor blackColor]];
         [self.contentView addSubview:self.credentialsNameLabel];
     }
     
@@ -43,7 +43,7 @@
 
 #define IMAGE_SIZE          42.0
 #define EDITING_INSET       10.0
-#define TEXT_LEFT_MARGIN    8.0
+#define TEXT_LEFT_MARGIN    30.0
 #define TEXT_RIGHT_MARGIN   5.0
 #define PREP_TIME_WIDTH     80.0
 
@@ -52,16 +52,16 @@
 - (CGRect)_nameLabelFrame {
     
     if (self.editing) {
-        return CGRectMake(IMAGE_SIZE + EDITING_INSET + TEXT_LEFT_MARGIN, 4.0, self.contentView.bounds.size.width - IMAGE_SIZE - EDITING_INSET - TEXT_LEFT_MARGIN, 16.0);
+        return CGRectMake(IMAGE_SIZE + EDITING_INSET + TEXT_LEFT_MARGIN, 12.0, self.contentView.bounds.size.width - IMAGE_SIZE - EDITING_INSET - TEXT_LEFT_MARGIN, 16.0);
     }
     else {
-        return CGRectMake(IMAGE_SIZE + TEXT_LEFT_MARGIN, 4.0, self.contentView.bounds.size.width - IMAGE_SIZE - TEXT_RIGHT_MARGIN * 2 - PREP_TIME_WIDTH, 16.0);
+        return CGRectMake(IMAGE_SIZE + TEXT_LEFT_MARGIN, 12.0, self.contentView.bounds.size.width - IMAGE_SIZE - TEXT_RIGHT_MARGIN * 2 - PREP_TIME_WIDTH, 16.0);
     }
 }
 
 #pragma mark - Recipe set accessor
 
-- (void)setRecipe:(Credentials *)newCredentials {
+- (void)setCredentials:(Credentials *)newCredentials {
     
     if (newCredentials != _credentials) {
         _credentials = newCredentials;
