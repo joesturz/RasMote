@@ -30,7 +30,7 @@ static NSString *kShowTableView = @"showTableView";
     // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     // Set the table view's row height
     self.tableView.rowHeight = 44.0;
-    [self.tableView setBackgroundColor:[UIColor colorWithRed:39.0f/255.0f green:39.0f/255.0f blue:39.0f/255.0f alpha:1.0f]];
+    [self.tableView setBackgroundColor:[UIColor colorWithRed:64.0f/255.0f green:64.0f/255.0f blue:64.0f/255.0f alpha:1.0f]];
     
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {

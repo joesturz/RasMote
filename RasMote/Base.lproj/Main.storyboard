@@ -215,7 +215,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Client Selected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lfd-n2-FOe">
-                                <rect key="frame" x="16" y="49" width="343" height="21"/>
+                                <rect key="frame" x="16" y="71" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -226,6 +226,7 @@
                             <constraint firstAttribute="centerX" secondItem="O1d-g7-ezB" secondAttribute="centerX" constant="114.5" id="0nc-aj-0Wb"/>
                             <constraint firstAttribute="centerX" secondItem="YG0-Ad-oNw" secondAttribute="centerX" constant="-110.5" id="1Ym-xQ-Oq0"/>
                             <constraint firstAttribute="centerY" secondItem="XH5-22-I7b" secondAttribute="centerY" constant="-129.5" id="3lr-Mv-lKv"/>
+                            <constraint firstItem="9oJ-j8-EUd" firstAttribute="top" secondItem="Lfd-n2-FOe" secondAttribute="bottom" constant="24" id="5Xm-0a-jqe"/>
                             <constraint firstItem="ywt-pV-hFP" firstAttribute="top" secondItem="9oJ-j8-EUd" secondAttribute="bottom" constant="7" id="7uj-Sb-VSG"/>
                             <constraint firstItem="c4s-Xn-x5B" firstAttribute="top" secondItem="jqg-sy-dxO" secondAttribute="bottom" constant="20" id="9eO-tU-0FB"/>
                             <constraint firstItem="ywt-pV-hFP" firstAttribute="top" secondItem="5sh-pv-amW" secondAttribute="bottom" constant="6" id="9v9-P0-Elt"/>
@@ -253,7 +254,6 @@
                             <constraint firstItem="cLm-xC-DhB" firstAttribute="leading" secondItem="xta-o9-3tE" secondAttribute="trailing" constant="1" id="WU5-7n-zTB"/>
                             <constraint firstItem="S0x-VP-HP5" firstAttribute="top" secondItem="X0L-D6-whj" secondAttribute="bottom" constant="5" id="WlQ-zG-DFk"/>
                             <constraint firstAttribute="centerX" secondItem="ywt-pV-hFP" secondAttribute="centerX" id="YAJ-dl-FwH"/>
-                            <constraint firstItem="Lfd-n2-FOe" firstAttribute="top" secondItem="bfD-tQ-IfD" secondAttribute="bottom" constant="29" id="YGs-L8-FhF"/>
                             <constraint firstAttribute="centerY" secondItem="ySO-Jv-CK9" secondAttribute="centerY" constant="21.5" id="YJw-Ut-xp0"/>
                             <constraint firstItem="S0x-VP-HP5" firstAttribute="top" secondItem="X0L-D6-whj" secondAttribute="bottom" constant="5" id="cDU-lU-YFB"/>
                             <constraint firstItem="xta-o9-3tE" firstAttribute="leading" secondItem="l9E-07-oys" secondAttribute="leadingMargin" constant="4" id="cTu-9T-Yat"/>
@@ -312,13 +312,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Clients" id="5x1-6a-nDP">
                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="IUV-06-Bhm">
-                            <color key="tintColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.89729368093480666" green="0.49872714711926103" blue="0.00027093019154836588" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="done:" destination="DTx-FN-YC4" id="mMO-8j-XdB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6ep-US-kha">
-                            <color key="tintColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.89729368089999995" green="0.49872714709999999" blue="0.0002709301915" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="d4a-j2-pCZ" kind="modal" identifier="addCredentials" id="VNa-Ul-f9l"/>
                             </connections>
@@ -390,7 +390,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="32400" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h3x-jT-Ynv">
-                                <rect key="frame" x="182" y="217" width="77" height="30"/>
+                                <rect key="frame" x="182" y="212" width="77" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" keyboardAppearance="alert" returnKeyType="route"/>
                                 <connections>
@@ -420,7 +420,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Port :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsJ-up-3UN">
-                                <rect key="frame" x="132" y="221" width="42" height="21"/>
+                                <rect key="frame" x="132" y="216" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -435,12 +435,13 @@
                         <color key="backgroundColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="89j-uu-QAX" secondAttribute="centerX" constant="71.5" id="6Io-G4-Jwg"/>
-                            <constraint firstAttribute="centerX" secondItem="qsJ-up-3UN" secondAttribute="centerX" constant="34.5" id="AvB-A3-lhZ"/>
+                            <constraint firstItem="8sa-Ki-N2W" firstAttribute="leading" secondItem="qch-Z8-0UC" secondAttribute="trailing" constant="8" id="F0i-ri-L1s"/>
                             <constraint firstAttribute="centerX" secondItem="zuI-w1-Lt1" secondAttribute="centerX" constant="69.5" id="Hbn-xT-eFL"/>
-                            <constraint firstItem="8sa-Ki-N2W" firstAttribute="leading" secondItem="qch-Z8-0UC" secondAttribute="trailing" constant="7" id="Hrt-6Q-Aud"/>
+                            <constraint firstAttribute="centerX" secondItem="qch-Z8-0UC" secondAttribute="centerX" constant="65.5" id="PlB-it-m12"/>
                             <constraint firstItem="h3x-jT-Ynv" firstAttribute="leading" secondItem="qsJ-up-3UN" secondAttribute="trailing" constant="8" id="QnJ-Dq-dGw"/>
                             <constraint firstItem="xe9-MO-V5o" firstAttribute="leading" secondItem="zuI-w1-Lt1" secondAttribute="trailing" constant="8" id="SEE-Sn-ObC"/>
                             <constraint firstItem="F6o-eL-85H" firstAttribute="leading" secondItem="89j-uu-QAX" secondAttribute="trailing" constant="7" id="VJO-DB-tIV"/>
+                            <constraint firstAttribute="centerX" secondItem="qsJ-up-3UN" secondAttribute="centerX" constant="34.5" id="YHW-m3-GMM"/>
                         </constraints>
                         <connections>
                             <action selector="clickBackgound" destination="kIf-nA-PKG" eventType="touchUpInside" id="yWq-Qn-ddr"/>
@@ -448,13 +449,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Client Credentials" id="K3n-gp-3F0">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wt2-Hz-yfz">
-                            <color key="tintColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.89729368089999995" green="0.49872714709999999" blue="0.0002709301915" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="cancel:" destination="kIf-nA-PKG" id="eT3-kD-9hP"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tvV-zB-eW4">
-                            <color key="tintColor" red="1" green="0.63124972749999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <barButtonItem key="rightBarButtonItem" title="Set" id="tvV-zB-eW4">
+                            <color key="tintColor" red="0.89729368089999995" green="0.49872714709999999" blue="0.0002709301915" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="2e0-DA-dBx" kind="unwind" unwindAction="update:" id="thN-if-OcV"/>
                             </connections>

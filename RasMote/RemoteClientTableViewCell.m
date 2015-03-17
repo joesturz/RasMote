@@ -41,7 +41,7 @@
 }
 
 
-#define IMAGE_SIZE          42.0
+#define IMAGE_SIZE          0.0
 #define EDITING_INSET       10.0
 #define TEXT_LEFT_MARGIN    30.0
 #define TEXT_RIGHT_MARGIN   5.0
@@ -52,10 +52,11 @@
 - (CGRect)_nameLabelFrame {
     
     if (self.editing) {
-        return CGRectMake(IMAGE_SIZE + EDITING_INSET + TEXT_LEFT_MARGIN, 12.0, self.contentView.bounds.size.width - IMAGE_SIZE - EDITING_INSET - TEXT_LEFT_MARGIN, 16.0);
+        return CGRectMake(IMAGE_SIZE + EDITING_INSET + TEXT_LEFT_MARGIN, 12.0, self.contentView.bounds.size.width - IMAGE_SIZE - EDITING_INSET - TEXT_LEFT_MARGIN, 20.0);
+
     }
     else {
-        return CGRectMake(IMAGE_SIZE + TEXT_LEFT_MARGIN, 12.0, self.contentView.bounds.size.width - IMAGE_SIZE - TEXT_RIGHT_MARGIN * 2 - PREP_TIME_WIDTH, 16.0);
+        return CGRectMake(IMAGE_SIZE + TEXT_LEFT_MARGIN, 12.0, self.contentView.bounds.size.width - IMAGE_SIZE - TEXT_RIGHT_MARGIN * 2 - PREP_TIME_WIDTH, 20.0);
     }
 }
 
