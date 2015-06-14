@@ -20,4 +20,8 @@
     [self.navigationBar setAlpha:0.0];
     //255	161	0
 }
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
 @end
