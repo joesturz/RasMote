@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D80F34131B51BCD600B65B01 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80F34121B51BCD600B65B01 /* Launch Screen.storyboard */; };
 		D8216A261AAA467B00CC9164 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = D8216A251AAA467B00CC9164 /* Credentials.m */; };
 		D829CA8B1A9EDD2D00FF3F5A /* EditingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D829CA8A1A9EDD2D00FF3F5A /* EditingTableViewCell.m */; };
 		D84CA0AD1B2CEB46008939EC /* RemoteNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CA0AC1B2CEB46008939EC /* RemoteNavController.m */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D80F34121B51BCD600B65B01 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "Images.xcassets/LaunchImage.launchimage/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D8216A241AAA467B00CC9164 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		D8216A251AAA467B00CC9164 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
 		D829CA891A9EDD2D00FF3F5A /* EditingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditingTableViewCell.h; path = RasMote/EditingTableViewCell.h; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				D84EC340196393FF00FC36DF /* Main.storyboard */,
 				D84EC349196393FF00FC36DF /* Images.xcassets */,
+				D80F34121B51BCD600B65B01 /* Launch Screen.storyboard */,
 			);
 			name = "Application Resources";
 			sourceTree = "<group>";
@@ -268,7 +271,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Remote;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Joe Sturzenegger";
 				TargetAttributes = {
 					D84EC32A196393FF00FC36DF = {
@@ -305,6 +308,7 @@
 			files = (
 				D84EC34A196393FF00FC36DF /* Images.xcassets in Resources */,
 				D84EC339196393FF00FC36DF /* InfoPlist.strings in Resources */,
+				D80F34131B51BCD600B65B01 /* Launch Screen.storyboard in Resources */,
 				D84EC342196393FF00FC36DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +405,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -463,10 +468,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
 				INFOPLIST_FILE = "RasMote/RasMote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Sturzenegger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -481,10 +487,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
 				INFOPLIST_FILE = "RasMote/RasMote-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Sturzenegger.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -505,6 +512,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "RasMoteTests/RasMoteTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Sturzenegger.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -523,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RasMote/RasMote-Prefix.pch";
 				INFOPLIST_FILE = "RasMoteTests/RasMoteTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Joe-Sturzenegger.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
