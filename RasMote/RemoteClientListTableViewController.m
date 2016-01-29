@@ -32,6 +32,7 @@ static NSString *kShowTableView = @"showTableView";
     self.tableView.rowHeight = 44.0;
     [self.tableView setBackgroundColor:[UIColor colorWithRed:64.0f/255.0f green:64.0f/255.0f blue:64.0f/255.0f alpha:1.0f]];
     
+    
     NSError *error = nil;
     if (![[self fetchedResultsController] performFetch:&error]) {
         /*
@@ -89,6 +90,9 @@ static NSString *kShowTableView = @"showTableView";
     return numberOfRows;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
