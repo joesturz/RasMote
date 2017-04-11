@@ -142,7 +142,9 @@ NSMutableData *dataObj;
         URLString = [NSString stringWithFormat:@"%@%@", baseURLString, @"playback/pause"];
         NSLog(@"❚❚ button tapped!");
     }
-    
+    //the newer versions of plex throw a 401 when sending to the api not sure when if ever this will be fixed
+    //TODO: may need to add a token current presonal token string X-Plex-Token=PxKqJzPneqPqTAjKe9bE
+    NSLog(@"%@", URLString);
     request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:URLString]
                                       cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                   timeoutInterval:10];
@@ -191,7 +193,6 @@ NSMutableData *dataObj;
 {
     //NSLog(@"Recieve Response");
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *) response;
-    
     NSLog(@"Recieve Response, Status Code: %ld", (long)[HTTPResponse statusCode]);
     // This method is called when the server has determined that it
     // has enough information to create the NSURLResponse object.
